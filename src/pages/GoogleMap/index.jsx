@@ -12,7 +12,7 @@ export const GoogleMap = () => {
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
 
-    let streetViewURL = `https://www.google.com/maps/embed/v1/streetview?key=ADICIONAR_CHAVE_AQUI
+    let streetViewURL = `https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
             &location=${location[0]},${location[1]}`
     console.log(randomSeed)
 
