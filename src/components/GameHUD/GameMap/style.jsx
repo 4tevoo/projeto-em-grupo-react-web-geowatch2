@@ -8,7 +8,7 @@ export const MapWrapper = styled.div`
     bottom: 15%;
     right: 5%;
     border-radius: 25px;
-    overflow: hidden
+    overflow: hidden;
 `;
 
 export const StyledMapContainer = styled(MapContainer)`
