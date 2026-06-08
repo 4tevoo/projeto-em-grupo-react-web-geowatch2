@@ -1,17 +1,34 @@
-import {Route, Routes} from "react-router";
-import {Layout} from "../components/Layout/index.jsx";
-import {Page404} from "../pages/Page404/Index.jsx";
+import { Route, Routes } from "react-router";
+import { RotaPrivada } from "../components/RotaPrivada/index.jsx";
+import { Layout } from "../components/Layout/index.jsx";
+import { Page404 } from "../pages/Page404/Index.jsx";
 import { GoogleMap } from "../pages/GoogleMap/index.jsx";
-import {Results} from "../pages/Results/index.jsx";
+import { Results } from "../pages/Results/index.jsx";
+import { Login } from "../pages/Login/index.jsx";
+import { Cadastro } from "../pages/Cadastro/index.jsx"
 
 export const Routers = () => {
     return (
         <Routes>
-            <Route element={<Layout></Layout>}>
-                <Route path="/geowatch2" element={<GoogleMap />}/>
-                <Route path="/results" element={<Results/>}/>
+            {}
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+
+            {/* Rotas Privadas pra testar por enquanto, colocar depois em volta do perfil*/}
+            <Route element={<Layout />}>
+                <Route path="/geowatch2" element={
+                    <RotaPrivada>
+                        <GoogleMap />
+                    </RotaPrivada>
+                }/>
+                <Route path="/results" element={
+                    <RotaPrivada>
+                        <Results />
+                    </RotaPrivada>
+                }/>
             </Route>
-            <Route path="*" element={<Page404/>}/>
+
+            <Route path="*" element={<Page404 />}/>
         </Routes>
     )
 }
