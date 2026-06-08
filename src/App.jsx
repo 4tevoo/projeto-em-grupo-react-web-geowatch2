@@ -1,14 +1,18 @@
 import { GlobalStyle } from './GlobalStyle'
-import { GoogleMap } from './pages/GoogleMap'
+import 'leaflet/dist/leaflet.css';
+import { Routers } from "./routes/Routers.jsx";
+import { ResultProvider } from './context/ResultContext.jsx';
 
 function App() {
 
-  return (
-    <>
-      <GlobalStyle />
-      <GoogleMap />
-    </>
-  )
+    return (
+        <>
+            <ResultProvider>
+                <GlobalStyle />
+                <Routers></Routers>
+            </ResultProvider>
+        </>
+    )
 }
 
 export default App

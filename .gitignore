@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Variáveis de ambiente exceto o exemplo
+*package-lock.json
 .env*
 !.env.example
