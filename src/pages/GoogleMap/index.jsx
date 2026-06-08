@@ -5,6 +5,10 @@ import { useState } from 'react';
 
 
 export const GoogleMap = () => {
+    
+    const [randomSeed, setRandomSeed] = useState(getRandomSeed)
+    const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
+    const [position, setPosition] = useState()
 
     function getRandomSeed() {
         const random = locais[Math.floor(Math.random() * (locais.length - 1))]
@@ -30,9 +34,7 @@ export const GoogleMap = () => {
         return score;
     }
 
-    const [randomSeed, setRandomSeed] = useState(getRandomSeed)
-    const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
-    const [position, setPosition] = useState()
+    
 
     const streetViewURL = `https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
             &location=${location[0]},${location[1]}`
@@ -43,7 +45,8 @@ export const GoogleMap = () => {
         <>
             <GoogleView
             loading="lazy"
-            src={streetViewURL}>
+            src={streetViewURL}
+            >
             </GoogleView>
             <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()}/>
         </>
