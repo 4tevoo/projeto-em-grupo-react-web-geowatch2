@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const colors = {
-    red: 'B71813',
-    white: 'FEFFFE',
-    yellow: 'E6B43C',
-    green: '22D57F',
-    purple: '4A2399',
+    red: '#B71813',
+    white: '#FEFFFE',
+    yellow: '#E6B43C',
+    green: '#22D57F',
+    purple: '#4A2399',
 };
 
 export const Bloco = styled.section`
