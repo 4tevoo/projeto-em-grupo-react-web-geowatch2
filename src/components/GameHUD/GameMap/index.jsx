@@ -1,11 +1,7 @@
 import { Marker, TileLayer, useMapEvents } from 'react-leaflet';
 import { StyledMapContainer, MapWrapper } from './style'
-import { useState } from 'react'
 
-
-export const GameMap = () => {
-    
-    const [position, setPosition] = useState([-22.41, -42.97])
+export const GameMap = ({position, setPosition}) => {
     
     function MapClickHandler() {
         useMapEvents({
@@ -17,13 +13,14 @@ export const GameMap = () => {
 
     return (
     <MapWrapper>
-        <StyledMapContainer center={position} zoom={6} style={{ height: '500px', width: '100%' }}>
+        <StyledMapContainer center={[0, 0]} zoom={1}>
             <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url={`https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
+                attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+                tileSize={512}
+                zoomOffset={-1}
             />
-            <Marker position={position}>
-            </Marker>
+            {position && (<Marker position={position}></Marker>)}
             <MapClickHandler />
         </StyledMapContainer>
     </MapWrapper>
