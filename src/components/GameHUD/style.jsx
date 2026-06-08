@@ -12,7 +12,7 @@ export const ButtonHud = styled.button`
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #FEFFFE;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bolder;
     cursor: pointer;
     transition: all 0.3s ease;
