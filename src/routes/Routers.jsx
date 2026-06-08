@@ -3,6 +3,7 @@ import {Layout} from "../components/Layout/index.jsx";
 import {Page404} from "../pages/Page404/Index.jsx";
 import { GoogleMap } from "../pages/GoogleMap/index.jsx";
 import {Results} from "../pages/Results/index.jsx";
+import { Main } from "../pages/Main/index.jsx"
 
 export const Routers = () => {
     return (
@@ -10,6 +11,7 @@ export const Routers = () => {
             <Route element={<Layout></Layout>}>
                 <Route path="/geowatch2" element={<GoogleMap />}/>
                 <Route path="/results" element={<Results/>}/>
+                <Route path="/main" element={<Main />} />
             </Route>
             <Route path="*" element={<Page404/>}/>
         </Routes>
