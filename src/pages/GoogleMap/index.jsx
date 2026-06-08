@@ -1,6 +1,8 @@
 import { locais } from '../../data/locais'
+import { GameHUD } from '../../components/GameHUD/index.jsx';
 import { GoogleView } from './style.jsx'
 import { useState } from 'react';
+
 
 export const GoogleMap = () => {
 
@@ -17,11 +19,14 @@ export const GoogleMap = () => {
     console.log(randomSeed)
 
     return (
-        <GoogleView
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        src={streetViewURL}>
-        </GoogleView>
+        <>
+            <GoogleView
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src={streetViewURL}>
+            </GoogleView>
+            <GameHUD />
+        </>
     )
 }
