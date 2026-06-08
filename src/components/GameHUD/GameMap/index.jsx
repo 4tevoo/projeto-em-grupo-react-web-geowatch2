@@ -13,13 +13,12 @@ export const GameMap = ({position, setPosition}) => {
 
     return (
     <MapWrapper>
-        <StyledMapContainer center={position} zoom={1}>
+        <StyledMapContainer center={[0, 0]} zoom={1}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={position}>
-            </Marker>
+            {position && (<Marker position={position}></Marker>)}
             <MapClickHandler />
         </StyledMapContainer>
     </MapWrapper>

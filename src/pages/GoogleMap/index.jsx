@@ -32,7 +32,7 @@ export const GoogleMap = () => {
 
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
-    const [position, setPosition] = useState([0, 0])
+    const [position, setPosition] = useState()
 
     const streetViewURL = `https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
             &location=${location[0]},${location[1]}`
