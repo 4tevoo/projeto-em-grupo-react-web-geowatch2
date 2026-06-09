@@ -1,7 +1,7 @@
 export const SORT_OPTIONS = [
-  { key: 'points',   label: 'Pontos' },
-  { key: 'avgScore', label: 'Média' },
-  { key: 'games',    label: 'Partidas' },
+  { key: 'pontos',           label: 'Pontos' },
+  { key: 'partidas',         label: 'Partidas' },
+  { key: 'recorde',          label: 'Recorde' },
 ];
 
 // Emojis tirados do site unicode.org

@@ -8,6 +8,7 @@ import { Login } from "../pages/Login/index.jsx";
 import { Cadastro } from "../pages/Cadastro/index.jsx"
 import { Main } from "../pages/Main/index.jsx"
 import { Perfil } from "../pages/PerfilUsuario/index.jsx";
+import RankingPage from "../pages/Rank/index.jsx";
 
 export const Routers = () => {
     return (
@@ -31,6 +32,8 @@ export const Routers = () => {
                     </RotaPrivada>
                 }/>
                 <Route path="/perfil" element={<Perfil/>}/>
+
+                <Route path="/ranking" element={<RankingPage/>}/>
 =======
 
             <Route path="*" element={<Page404 />}/>
