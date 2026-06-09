@@ -76,6 +76,7 @@ export const StyledResults = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
+    background-image: linear-gradient(rgba(74, 40, 153, 0.85), rgba(82, 43, 173, 0.85)), url(https://media.gettyimages.com/id/1385142384/pt/vetorial/outline-gradient-world-map-outline-background.jpg?s=612x612&w=0&k=20&c=EFkbBum2tFdQD5R29Om59UdVucWAgavTkJQmS2PgU-4=)
 `;
 export const MapWrapper = styled.div`
     width: 90%;
@@ -94,8 +95,6 @@ export const StyledMapContainer = styled(MapContainer)`
     
 `;
 
-
-
 export const StyledRestCountries = styled.div`
     padding: 20px;
     display: grid;
@@ -111,9 +110,11 @@ export const StyledRestCountries = styled.div`
 `;
 
 export const StyledFlag = styled.img`
-    max-height: 140px;
-    width: 100%;
+    max-height: 300px;
+    aspect-ratio: 1/1;
+    width: 90%;
     grid-area: ${props => props.area};
+    justify-self: center;
 `;
 export const StyledData = styled.div`
     grid-area: ${props => props.area};
