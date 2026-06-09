@@ -38,21 +38,17 @@ export const Login = () => {
     };
 
     return (
-        <LoginContainer bgImage={backgroundImage}>
+       <LoginContainer $bgImage={backgroundImage}>
             <FormCard onSubmit={handleLogin}>
                 <Title>Bem-vindo de volta ao GeoWatch 2!</Title>
                 <Subtitle>Entrar</Subtitle>
-
                 <Input type="email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} required />
                 <Input type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} required />
-
                 <Button type="submit" disabled={loading}>
                     {loading ? "Entrando..." : "Entrar"}
                 </Button>
-
                 <RegisterText>
-                    Não tem conta? <StyledLink to="/cadastro">Cadastre-se</StyledLink> 
-                    {}
+                    Não tem conta? <StyledLink to="/cadastro">Cadastre-se</StyledLink>
                 </RegisterText>
             </FormCard>
         </LoginContainer>

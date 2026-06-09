@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background-image: url(${(props) => props.bgImage});
+  background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   font-family: sans-serif;

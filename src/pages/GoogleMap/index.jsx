@@ -33,6 +33,11 @@ export const GoogleMap = () => {
         return distancia
     }
 
+    function truncateToDecimals(number, digits) {
+    const multiplier = Math.pow(10, digits);
+    return Math.trunc(number * multiplier) / multiplier;
+}
+
     function getScore() {
         const score = Math.floor(5000 * Math.pow(Math.E, (-10*getDistance()/7500)))
         let scoreSum = score;
@@ -52,7 +57,7 @@ export const GoogleMap = () => {
             guessLng: position[1],
             actualLat: location[0],
             actualLng: location[1],
-            distance: Math.round(getDistance())
+            distance: truncateToDecimals(getDistance(),2)
         })
 
         navigate('/results')
