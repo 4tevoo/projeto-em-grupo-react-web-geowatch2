@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router';
 import { toast } from 'react-toastify';
 import { userService } from '../../services/usuariosService';
-import { 
-    LoginContainer, FormCard, Input, Button, Title, Subtitle, RegisterText, StyledLink 
+import {
+    LoginContainer, FormCard, Input, Button, Title, Subtitle, RegisterText, StyledLink
 } from '../../styles/AuthStyle';
 import backgroundImage from '../../assets/background_auth.jpg';
 
@@ -15,34 +15,47 @@ export const Cadastro = () => {
     const navigate = useNavigate();
 
     const handleCadastro = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+        e.preventDefault();
+        if (senha.length < 4 || senha.length > 12) {
+            toast.warning("A senha deve ter entre 4 a 12 caracteres.");
+            return;
+        }
 
-    try {
-        const novoUsuario = { 
-            nome, 
-            email, 
-            senha, 
-            token: "", 
-            inativo: false,
-            dataCadastro: new Date().toISOString(), 
-            // avatar fixo por enquanto, pode ser o padrão até ter avatares dinâmicos no perfil do patrick
-            avatarURL: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
-        };
-        
-        await userService.cadastrar(novoUsuario);
-        
-        toast.success("Conta criada com sucesso!");
-        navigate('/login');
-    } catch (err) {
-        toast.error("Erro ao cadastrar. Tente novamente.");
-    } finally {
-        setLoading(false);
-    }
-};
+        if (!email.includes('@')) {
+            toast.warning("Por favor, insira um e-mail válido.");
+            return;
+        }
+        setLoading(true);
+
+        try {
+            const { data: usuarios } = await userService.listarTodos();
+            const emailExiste = usuarios.find(u => u.email === email);
+            if (emailExiste) {
+                toast.error("Este e-mail já está cadastrado!");
+                setLoading(false);
+                return;
+            }
+            const novoUsuario = {
+                nome,
+                email,
+                senha,
+                token: "",
+                inativo: false,
+                dataCadastro: new Date().toISOString(),
+                avatarURL: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            };
+            await userService.cadastrar(novoUsuario);
+            toast.success("Conta criada com sucesso!");
+            navigate('/login');
+        } catch (err) {
+            toast.error("Erro fatal no servidor. Tente novamente mais tarde.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
-        <LoginContainer bgImage={backgroundImage}>
+        <LoginContainer $bgImage={backgroundImage}>
             <FormCard onSubmit={handleCadastro}>
                 <Title>Bem-vindo ao Geowatch 2!</Title>
                 <Subtitle>Crie sua conta gratuita!</Subtitle>
