@@ -8,15 +8,19 @@ export const AuthProvider = ({ children }) => {
   const [usuario, setUsuario] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Dentro do seu AuthContext.jsx, substitua o useEffect por este:
+
   useEffect(() => {
     const checkToken = async () => {
       const tokenSalvo = localStorage.getItem('userToken');
-      
+
       if (tokenSalvo) {
         try {
-          const { data } = await userService.buscarPorToken(tokenSalvo)
-          if (data.length > 0) {
-            setUsuario(data[0]);
+          const { data } = await userService.listarTodos();
+          const usuarioLogado = data.find(u => u.token === tokenSalvo);
+
+          if (usuarioLogado) {
+            setUsuario(usuarioLogado);
           } else {
             localStorage.removeItem('userToken');
           }
