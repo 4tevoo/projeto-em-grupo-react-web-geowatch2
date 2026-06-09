@@ -3,15 +3,9 @@ import styled from "styled-components";
 export const BodyUsuarioStyle = styled.div`
     //background-color: #634b92;
     background-color: rgba(10, 5, 25, 0.3); 
-  
-  /* Ativa o efeito de vidro embaçado */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  
-  /* Uma bordinha clara e fina que simula o reflexo do vidro */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  
-
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     width: 60%;
     display: flex;
@@ -54,7 +48,7 @@ export const BodyUsuarioDadosGame = styled.div`
     //background: linear-gradient(180deg, #4A2399 0%, #17153b 100%);
     //background-attachment: fixed;
 
-    background-color: rgba(0, 0, 0, 0.2); /* Só uma sombra escura */
+    background-color: rgba(0, 0, 0, 0.2);
 
     width: 70%;
     box-sizing: border-box;
@@ -71,7 +65,7 @@ export const Label = styled.span`
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1px; /* Espaçamento elegante entre as letras */
+  letter-spacing: 1px; 
 `;
 
 export const Teste = styled.div`
