@@ -14,7 +14,29 @@ export const Bloco = styled.section`
     display: flex;
     align-items: center;
     padding: 0 5%;
+    position: relative;
+
+    background-image: ${({ $img }) => $img ? `url(${$img})` : 'none'};
+    background-size: cover;
+    background-position: center;
     background-color: ${({ $bg }) => $bg || '#1a1a2e'};
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: ${({ $bg }) => $bg || '#1a1a2e'};
+        opacity: 0.85;
+        z-index: 0;
+    }
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
 `;
 
 export const BlocoTitulo = styled.h2`

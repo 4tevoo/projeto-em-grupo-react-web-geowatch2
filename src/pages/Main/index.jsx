@@ -1,3 +1,4 @@
+import CardLogin from "../../components/Main/CardLogin";
 import OitavoBloco from "../../components/Main/OitavoBloco";
 import PrimeiroBloco from "../../components/Main/PrimeiroBloco";
 import QuartoBloco from "../../components/Main/QuartoBloco";
@@ -20,6 +21,7 @@ export function Main() {
             <SextoBloco />
             <SetimoBloco />
             <OitavoBloco />
+            <CardLogin />
         </MainWrapper>
     );
 }
