@@ -45,7 +45,7 @@ export const GoogleMap = () => {
 
         if(gameData) {
             scoreSum += gameData.finalScore
-            round++
+            round = gameData.round + 1
         }
 
         setGameData({
@@ -57,7 +57,7 @@ export const GoogleMap = () => {
             guessLng: position[1],
             actualLat: location[0],
             actualLng: location[1],
-            distance: truncateToDecimals(getDistance(),2)
+            distance: truncateToDecimals(getDistance(), 2)
         })
 
         navigate('/results')
@@ -77,7 +77,7 @@ export const GoogleMap = () => {
             src={streetViewURL}
             >
             </GoogleView>
-            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()}/>
+            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()} score={gameData.round}/>
         </>
     )
 }
