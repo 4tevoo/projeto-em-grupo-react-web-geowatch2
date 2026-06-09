@@ -61,14 +61,14 @@ export const BodyUsuarioDadosGame = styled.div`
 
 `
 export const Label = styled.span`
-  color: #c084fc;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px; 
+    color: #c084fc;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
 `;
 
-export const Teste = styled.div`
+export const InfosGame = styled.div`
     display: flex;
     gap: 10px;
     width: 92%;
