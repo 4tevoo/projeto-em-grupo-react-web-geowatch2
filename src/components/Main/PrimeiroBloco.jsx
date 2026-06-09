@@ -2,13 +2,13 @@ import { Bloco, BlocoTitulo, BlocoTexto } from "../../pages/Main/style";
 
 export default function PrimeiroBloco() {
     return (
-        <Bloco bg='#1a1a2e'>
+        <Bloco $bg='#1a1a2e'>
             <div>
                 <BlocoTitulo>
-                    TESTANDO TITULO.
+                    Introdução ao jogo
                 </BlocoTitulo>
                 <BlocoTexto>
-                    Testando texto.
+                    Mini texto descrevendo o jogo
                 </BlocoTexto>
             </div>
         </Bloco>

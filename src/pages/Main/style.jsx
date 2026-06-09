@@ -6,14 +6,15 @@ export const colors = {
     yellow: '#E6B43C',
     green: '#22D57F',
     purple: '#4A2399',
+    blue: '#105cad',
 };
 
 export const Bloco = styled.section`
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     padding: 0 5%;
-    background-color: ${({ bg }) => bg || '#1a1a2e'};
+    background-color: ${({ $bg }) => $bg || '#1a1a2e'};
 `;
 
 export const BlocoTitulo = styled.h2`
@@ -46,4 +47,9 @@ export const BlocoBotao = styled.button`
         color: #000;
     }
 `;
+
+export const MainWrapper = styled.div`
+    overflow-y: auto;
+    height: 100vh;
+`
 
