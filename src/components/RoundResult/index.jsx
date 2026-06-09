@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const RoundResult = () => {
+export const RoundResult = ({ score, distance }) => {
   return (
-    <div>RoundResult</div>
+    <div>{score}, {distance}Km</div>
   )
 }

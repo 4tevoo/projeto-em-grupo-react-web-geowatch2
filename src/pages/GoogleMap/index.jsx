@@ -1,7 +1,9 @@
 import { locais } from '../../data/locais'
 import { GameHUD } from '../../components/GameHUD/index.jsx';
+import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx'
 import { useState } from 'react';
+import { useResult } from '../../context/ResultContext.jsx';
 
 
 export const GoogleMap = () => {
@@ -9,6 +11,9 @@ export const GoogleMap = () => {
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
+
+    const { setGameData, gameData } = useResult()
+    const navigate = useNavigate();
 
     function getRandomSeed() {
         const random = locais[Math.floor(Math.random() * (locais.length - 1))]
@@ -30,8 +35,27 @@ export const GoogleMap = () => {
 
     function getScore() {
         const score = Math.floor(5000 * Math.pow(Math.E, (-10*getDistance()/7500)))
-        alert(score)
-        return score;
+        let scoreSum = score;
+        let round = 0;
+
+        if(gameData) {
+            scoreSum += gameData.finalScore
+            round++
+        }
+
+        setGameData({
+            score: score,
+            finalScore: scoreSum,
+            round: round,
+            country: randomSeed.country,
+            guessLat: position[0],
+            guessLng: position[1],
+            actualLat: location[0],
+            actualLng: location[1],
+            distance: Math.round(getDistance())
+        })
+
+        navigate('/results')
     }
 
     
