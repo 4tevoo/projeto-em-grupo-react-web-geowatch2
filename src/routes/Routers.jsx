@@ -6,6 +6,7 @@ import { GoogleMap } from "../pages/GoogleMap/index.jsx";
 import { Results } from "../pages/Results/index.jsx";
 import { Login } from "../pages/Login/index.jsx";
 import { Cadastro } from "../pages/Cadastro/index.jsx"
+import { Main } from "../pages/Main/index.jsx"
 
 export const Routers = () => {
     return (
@@ -13,6 +14,7 @@ export const Routers = () => {
             {}
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/main" element={<Main />} />
 
             {/* Rotas Privadas pra testar por enquanto, colocar depois em volta do perfil*/}
             <Route element={<Layout />}>
