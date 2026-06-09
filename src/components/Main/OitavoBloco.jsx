@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { colors } from "../../pages/Main/style";
 import styled from "styled-components";
 
@@ -34,7 +35,60 @@ export const RodapeLista = styled.ul`
     color: ${colors.white};
 `;
 
+export const ColunaFreq = styled.div`
+    flex: 1;
+    min-width: 300px;
+`;
+
+export const FreqItem = styled.div`
+    border-bottom: 1px solid #333;
+    padding: 1rem 0;
+    cursor: pointer;
+`;
+
+export const FreqPergunta = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: ${colors.white};
+    font-weight: 600;
+    font-size: 0.95rem;
+`;
+
+export const FreqResposta = styled.p`
+    margin-top: 0.75rem;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    line-height: 1.6;
+`;
+
+export const faqs = [
+    {
+        pergunta: "O que é GeoWatch?",
+        resposta: "GeoWatch é um jogo de geografia em quem você é largado em algum lugar do mundo e sua missão é encontrar pistas e advinhar a sua localização no mapa."
+    },
+    {
+        pergunta: "Dificuldade em entrar na minha conta.",
+        resposta: "Se esqueceu sua senha, clique em 'Já tem uma conta?' e depois em 'Esqueceu sua senha?'. Insira o email associado e você receberá um link para redefinir."
+    },
+    {
+        pergunta: "GeoWatch está disponível na App Store e Google Play?",
+        resposta: "Sim, o GeoWatch está disponível para iOS e Android, e sua conta também permite que você jogue no aplicativo."
+    },
+    {
+        pergunta: "Em quais idiomas o GeoWatch está disponível?",
+        resposta: "GeoWatch está disponível em múltiplos idiomas. Você pode escolher o idioma nas configurações da conta."
+    }
+];
+
 export default function OitavoBloco() {
+
+    const [pergunta, setPergunta] = useState(null);
+
+    function toggleFreq(index) {
+        setPergunta(pergunta === index ? null : index);
+    }
+
     return (
         <RodapeWrapper>
             <div>
@@ -44,12 +98,35 @@ export default function OitavoBloco() {
                     Info1<br />
                     Info2<br />
                     Info3<br /><br />
+                    © 2026 GeoWatch
                 </RodapeInfo>
             </div>
 
             <div>
                 <RodapeLabel>EXPLORAR</RodapeLabel>
+                <RodapeLista>
+                    <li>Campeonato Mundial 2026</li>
+                    <li>Empresa</li>
+                    <li>Loja</li>
+                    <li>Cartões-presente</li>
+                </RodapeLista>
             </div>
+
+            <ColunaFreq>
+                <RodapeLabel>PERGUNTAS FREQUENTES</RodapeLabel>
+
+                {freq.map((freqs, index) => (
+                    <FreqItem key={index} onClick={() => toggleFaq(index)}>
+                        <FreqPergunta>
+                            {freq.pergunta}
+                            <span>{aberto === index ? "-" : "+"}</span>
+                        </FreqPergunta>
+                        {aberto === index && (
+                            <FreqResposta>{freq.resposta}</FreqResposta>
+                        )}
+                    </FreqItem>
+                ))}
+            </ColunaFreq>
         </RodapeWrapper>
         
     );
