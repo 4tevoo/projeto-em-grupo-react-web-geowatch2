@@ -16,7 +16,11 @@ export const LoginContainer = styled.div`
 `;
 
 export const FormCard = styled.form`
-  background: #FEFFFE;
+  background-color: rgba(10, 5, 25, 0.3); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+
   padding: 2rem 1.5rem;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -25,13 +29,13 @@ export const FormCard = styled.form`
   gap: 1rem;
   width: 100%; 
   max-width: 350px; 
-  border: 2px solid #4A2399;
+  //border: 2px solid #4A2399;
   box-sizing: border-box;
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  color: #4A2399;
+  color: #FFFFFF;
   font-size: 1.6rem; 
   margin-bottom: 0.5rem;
   @media (min-width: 768px) {
@@ -51,7 +55,7 @@ export const Subtitle = styled.h2`
 
 export const Input = styled.input`
   padding: 12px;
-  border: 2px solid #4A2399;
+  border: 2px solid #E6B43C;
   border-radius: 8px;
   font-size: 1rem;
   width: 100%; 
@@ -86,7 +90,7 @@ export const ErrorMessage = styled.p`
 `;
 
 export const StyledLink = styled(Link)`
-  color: #4A2399;
+  color: #E6B43C;
   text-decoration: none;
   font-weight: bold;
   &:hover { text-decoration: underline; }
@@ -95,5 +99,5 @@ export const StyledLink = styled(Link)`
 export const RegisterText = styled.p`
   text-align: center;
   font-size: 0.9rem;
-  color: #333;
+  color: #ffffff;
 `;
