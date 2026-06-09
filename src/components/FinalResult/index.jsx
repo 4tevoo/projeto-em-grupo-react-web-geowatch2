@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyledFinalResult } from './style'
 
-export const FinalResult = () => {
+export const FinalResult = (finalScore) => {
   return (
-    <StyledFinalResult></StyledFinalResult>
+    <StyledFinalResult>Resultado final: {finalScore}</StyledFinalResult>
   )
 }

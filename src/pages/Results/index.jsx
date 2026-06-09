@@ -35,8 +35,8 @@ export const Results = () => {
         <StyledContainer>
             <StyledCard>
                 <StyledResults>
-                    <RoundResult score={gameData.score} distance={gameData.distance}>Round Result</RoundResult>
-                    {gameData.round == 5 && <FinalResult score={gameData.finalScore} >Final Result</FinalResult>}
+                    <RoundResult score={gameData.score} distance={gameData.distance}></RoundResult>
+                    {gameData.round == 5 && <FinalResult score={gameData.finalScore} ></FinalResult>}
                 </StyledResults>
             </StyledCard>
             <MapWrapper>
@@ -63,7 +63,10 @@ export const Results = () => {
                     />
                 </StyledMapContainer>
             </MapWrapper>
-            <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>
+
+            {gameData.round <= 4 && <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>}
+            {gameData.round == 5 && <Link id='nextRound' to={'/ranking'}>Finalizar Partida</Link>}
+
             {countryData && (
                 <StyledCard>
                     <StyledRestCountries>
