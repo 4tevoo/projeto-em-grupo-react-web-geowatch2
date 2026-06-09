@@ -3,13 +3,13 @@ import { colors } from "../../pages/Main/style";
 
 export default function SegundoBloco() {
     return (
-        <Bloco bg={colors.green}>
+        <Bloco $bg={colors.green}>
             <div>
                 <BlocoTitulo>
-                    Teste segundo bloco
+                    Região 1
                 </BlocoTitulo>
                 <BlocoTexto>
-                    Teste texto segundo bloco
+                    Mini texto descrevendo região 1
                 </BlocoTexto>
             </div>
         </Bloco>
