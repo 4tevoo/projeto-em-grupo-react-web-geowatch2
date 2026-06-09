@@ -26,7 +26,7 @@ export const ButtonEditar = styled(Button)`
     }
 
     &:active {
-        transform: translateY(1px); /* Afunda de leve ao clicar */
+        transform: translateY(1px); 
     }
 `;
 

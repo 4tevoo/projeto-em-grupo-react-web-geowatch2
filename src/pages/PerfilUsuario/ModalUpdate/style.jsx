@@ -6,8 +6,8 @@ export const ModalOverlay = styled.div`
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Escurece o jogo atrás */
-    backdrop-filter: blur(8px); /* Deixa o fundo borrado enquanto o modal está aberto */
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(8px); 
     display: flex;
     align-items: center;
     justify-content: center;
