@@ -1,4 +1,4 @@
-import { BodyUsuarioDadosCad, BodyUsuarioDadosGame, BodyUsuarioStyle, InfoCad, UserEmail, Teste, Label} from "./style"
+import { BodyUsuarioDadosCad, BodyUsuarioDadosGame, BodyUsuarioStyle, InfoCad, UserEmail, InfosGame, Label} from "./style"
 import { useAuth } from "../../../context/AuthContext"
 export const BodyUsuario = () => {
     const { usuario, loading } = useAuth();
@@ -22,11 +22,11 @@ export const BodyUsuario = () => {
         </BodyUsuarioDadosCad>
         <BodyUsuarioDadosGame>
             <h2>Painel do Jogador</h2>
-            <Teste>
+            <InfosGame>
                 <InfoCad>Recorde</InfoCad>
                 <InfoCad>Partidas Jogadas</InfoCad>
                 <InfoCad>Maior precisão</InfoCad>
-            </Teste>
+            </InfosGame>
             <InfoCad>Histórico das últimas partidas</InfoCad>
         </BodyUsuarioDadosGame>
     </BodyUsuarioStyle>
