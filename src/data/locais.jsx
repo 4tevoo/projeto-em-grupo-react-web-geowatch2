@@ -2,352 +2,602 @@ export const locais =
 [
   {
     "id": 1,
-    "country": "França",
-    "street": "Av. Anatole France (junto à Torre Eiffel)",
-    "latitude": 48.8584,
-    "longitude": 2.2945
+    "latitude": -22.9,
+    "longitude": -43.2,
+    "country": "Brazil"
   },
   {
     "id": 2,
-    "country": "Reino Unido",
-    "street": "Westminster Bridge Rd, Londres",
-    "latitude": 51.5007,
-    "longitude": -0.1246
+    "latitude": 40.86,
+    "longitude": -73.85,
+    "country": "USA"
   },
   {
     "id": 3,
-    "country": "Estados Unidos",
-    "street": "5th Avenue, Manhattan, NY",
-    "latitude": 40.7549,
-    "longitude": -73.984
+    "latitude": 43.95,
+    "longitude": -79.08,
+    "country": "Canada"
   },
   {
     "id": 4,
-    "country": "Brasil",
-    "street": "Av. Atlântica, Copacabana, Rio",
-    "latitude": -22.9711,
-    "longitude": -43.1823
+    "latitude": 19.88,
+    "longitude": -98.68,
+    "country": "Mexico"
   },
   {
     "id": 5,
-    "country": "Japão",
-    "street": "Shibuya Crossing, Tóquio",
-    "latitude": 35.6595,
-    "longitude": 139.7004
+    "latitude": -34.0,
+    "longitude": -57.78,
+    "country": "Argentina"
   },
   {
     "id": 6,
-    "country": "Austrália",
-    "street": "George St, Sydney CBD",
-    "latitude": -33.8688,
-    "longitude": 151.2093
+    "latitude": -33.45,
+    "longitude": -69.91,
+    "country": "Chile"
   },
   {
     "id": 7,
-    "country": "Rússia",
-    "street": "Rua Arbat, Moscou",
-    "latitude": 55.75,
-    "longitude": 37.5917
+    "latitude": -11.9,
+    "longitude": -76.14,
+    "country": "Peru"
   },
   {
     "id": 8,
-    "country": "Itália",
-    "street": "Via della Conciliazione, Roma",
-    "latitude": 41.9029,
-    "longitude": 12.4534
+    "latitude": 5.01,
+    "longitude": -74.07,
+    "country": "Colombia"
   },
   {
     "id": 9,
-    "country": "Espanha",
-    "street": "Gran Via, Madri",
-    "latitude": 40.42,
-    "longitude": -3.7024
+    "latitude": 51.95,
+    "longitude": 0.03,
+    "country": "UK"
   },
   {
     "id": 10,
-    "country": "Alemanha",
-    "street": "Unter den Linden, Berlim",
-    "latitude": 52.5163,
-    "longitude": 13.3777
+    "latitude": 49.45,
+    "longitude": 2.65,
+    "country": "France"
   },
   {
     "id": 11,
-    "country": "Argentina",
-    "street": "Av. 9 de Julio, Buenos Aires",
-    "latitude": -34.6083,
-    "longitude": -58.3712
+    "latitude": 52.52,
+    "longitude": 13.85,
+    "country": "Germany"
   },
   {
     "id": 12,
-    "country": "México",
-    "street": "Paseo de la Reforma, Cidade do México",
-    "latitude": 19.427,
-    "longitude": -99.1676
+    "latitude": 40.56,
+    "longitude": -3.1,
+    "country": "Spain"
   },
   {
     "id": 13,
-    "country": "Índia",
-    "street": "Rajpath (Kartavya Path), Nova Delhi",
-    "latitude": 28.6129,
-    "longitude": 77.2295
+    "latitude": 39.02,
+    "longitude": -8.38,
+    "country": "Portugal"
   },
   {
     "id": 14,
-    "country": "Egito",
-    "street": "Corniche El Nil, Cairo",
-    "latitude": 30.0444,
-    "longitude": 31.2357
+    "latitude": 42.35,
+    "longitude": 13.39,
+    "country": "Italy"
   },
   {
     "id": 15,
-    "country": "Singapura",
-    "street": "Orchard Road, Singapura",
-    "latitude": 1.3048,
-    "longitude": 103.8318
+    "latitude": 52.97,
+    "longitude": 4.89,
+    "country": "Netherlands"
   },
   {
     "id": 16,
-    "country": "Coreia do Sul",
-    "street": "Gangnam-daero, Seul",
-    "latitude": 37.4979,
-    "longitude": 127.0276
+    "latitude": 50.85,
+    "longitude": 4.5,
+    "country": "Belgium"
   },
   {
     "id": 17,
-    "country": "Itália",
-    "street": "Via Vittorio Emanuele II, Milão",
-    "latitude": 45.4654,
-    "longitude": 9.1859
+    "latitude": 59.48,
+    "longitude": 18.36,
+    "country": "Sweden"
   },
   {
     "id": 18,
-    "country": "Suécia",
-    "street": "Drottninggatan, Estocolmo",
-    "latitude": 59.3346,
-    "longitude": 18.0632
+    "latitude": 60.21,
+    "longitude": 11.2,
+    "country": "Norway"
   },
   {
     "id": 19,
-    "country": "Finlândia",
-    "street": "Mannerheimintie, Helsinque",
-    "latitude": 60.1699,
-    "longitude": 24.9384
+    "latitude": 60.62,
+    "longitude": 25.54,
+    "country": "Finland"
   },
   {
     "id": 20,
-    "country": "Dinamarca",
-    "street": "Strøget, Copenhague",
-    "latitude": 55.6761,
-    "longitude": 12.5683
+    "latitude": 56.27,
+    "longitude": 13.31,
+    "country": "Denmark"
   },
   {
     "id": 21,
-    "country": "Suíça",
-    "street": "Bahnhofstrasse, Zurique",
-    "latitude": 47.3769,
-    "longitude": 8.5417
+    "latitude": -22.9,
+    "longitude": -42.3,
+    "country": "Brazil"
   },
   {
     "id": 22,
-    "country": "Bélgica",
-    "street": "Rue de la Loi, Bruxelas",
-    "latitude": 50.8503,
-    "longitude": 4.3517
+    "latitude": 40.86,
+    "longitude": -74.0,
+    "country": "USA"
   },
   {
     "id": 23,
-    "country": "Holanda",
-    "street": "Damrak, Amsterdã",
-    "latitude": 52.3729,
-    "longitude": 4.8936
+    "latitude": 43.95,
+    "longitude": -79.23,
+    "country": "Canada"
   },
   {
     "id": 24,
-    "country": "Portugal",
-    "street": "Av. da Liberdade, Lisboa",
-    "latitude": 38.7223,
-    "longitude": -9.1393
+    "latitude": 19.88,
+    "longitude": -98.83,
+    "country": "Mexico"
   },
   {
     "id": 25,
-    "country": "Noruega",
-    "street": "Karl Johans gate, Oslo",
-    "latitude": 59.9139,
-    "longitude": 10.7522
+    "latitude": -34.0,
+    "longitude": -57.93,
+    "country": "Argentina"
   },
   {
     "id": 26,
-    "country": "Nova Zelândia",
-    "street": "Queen Street, Auckland",
-    "latitude": -36.8484,
-    "longitude": 174.7633
+    "latitude": -33.45,
+    "longitude": -70.06,
+    "country": "Chile"
   },
   {
     "id": 27,
-    "country": "Canadá",
-    "street": "Yonge Street, Toronto",
-    "latitude": 43.6532,
-    "longitude": -79.3832
+    "latitude": -11.9,
+    "longitude": -76.29,
+    "country": "Peru"
   },
   {
     "id": 28,
-    "country": "Emirados Árabes",
-    "street": "Sheikh Zayed Road, Dubai",
-    "latitude": 25.2048,
-    "longitude": 55.2708
+    "latitude": 5.01,
+    "longitude": -73.17,
+    "country": "Colombia"
   },
   {
     "id": 29,
-    "country": "Tailândia",
-    "street": "Sukhumvit Road, Bangkok",
-    "latitude": 13.7315,
-    "longitude": 100.5602
+    "latitude": 51.95,
+    "longitude": -0.12,
+    "country": "UK"
   },
   {
     "id": 30,
-    "country": "África do Sul",
-    "street": "Long Street, Cidade do Cabo",
-    "latitude": -33.9258,
-    "longitude": 18.4232
+    "latitude": 49.45,
+    "longitude": 2.5,
+    "country": "France"
   },
   {
     "id": 31,
-    "country": "China",
-    "street": "Beijing Road, Guangzhou",
-    "latitude": 23.1291,
-    "longitude": 113.2644
+    "latitude": 52.52,
+    "longitude": 13.7,
+    "country": "Germany"
   },
   {
     "id": 32,
-    "country": "Senegal",
-    "street": "Av. Cheikh Anta Diop, Dacar",
-    "latitude": 14.6928,
-    "longitude": -17.4467
+    "latitude": 40.56,
+    "longitude": -3.25,
+    "country": "Spain"
   },
   {
     "id": 33,
-    "country": "Rep. do Congo",
-    "street": "Blvd du 30 Juin, Kinshasa",
-    "latitude": -4.3217,
-    "longitude": 15.3222
+    "latitude": 39.02,
+    "longitude": -8.53,
+    "country": "Portugal"
   },
   {
     "id": 34,
-    "country": "Nigéria",
-    "street": "Aba Road, Port Harcourt",
-    "latitude": 4.8594,
-    "longitude": 7.0134
+    "latitude": 42.35,
+    "longitude": 13.24,
+    "country": "Italy"
   },
   {
     "id": 35,
-    "country": "Vanuatu",
-    "street": "Kumul Highway, Port Vila",
-    "latitude": -17.7334,
-    "longitude": 168.3219
+    "latitude": 52.97,
+    "longitude": 5.79,
+    "country": "Netherlands"
   },
   {
     "id": 36,
-    "country": "Hungria",
-    "street": "Andrássy út, Budapeste",
-    "latitude": 47.504,
-    "longitude": 19.0619
+    "latitude": 50.85,
+    "longitude": 4.35,
+    "country": "Belgium"
   },
   {
     "id": 37,
-    "country": "República Tcheca",
-    "street": "Václavské náměstí, Praga",
-    "latitude": 50.0796,
-    "longitude": 14.4261
+    "latitude": 59.48,
+    "longitude": 18.21,
+    "country": "Sweden"
   },
   {
     "id": 38,
-    "country": "Polônia",
-    "street": "Nowy Świat, Varsóvia",
-    "latitude": 52.2322,
-    "longitude": 21.0165
+    "latitude": 60.21,
+    "longitude": 11.05,
+    "country": "Norway"
   },
   {
     "id": 39,
-    "country": "Sérvia",
-    "street": "Knez Mihailova, Belgrado",
-    "latitude": 44.8176,
-    "longitude": 20.4569
+    "latitude": 60.62,
+    "longitude": 25.39,
+    "country": "Finland"
   },
   {
     "id": 40,
-    "country": "Grécia",
-    "street": "Ermou Street, Atenas",
-    "latitude": 37.9757,
-    "longitude": 23.7253
+    "latitude": 56.27,
+    "longitude": 13.16,
+    "country": "Denmark"
   },
   {
     "id": 41,
-    "country": "Turquia",
-    "street": "İstiklal Caddesi, Istambul",
-    "latitude": 41.0338,
-    "longitude": 28.9777
+    "latitude": -22.9,
+    "longitude": -42.45,
+    "country": "Brazil"
   },
   {
     "id": 42,
-    "country": "Israel",
-    "street": "Ben Yehuda Street, Jerusalém",
-    "latitude": 31.7802,
-    "longitude": 35.2147
+    "latitude": 40.86,
+    "longitude": -73.1,
+    "country": "USA"
   },
   {
     "id": 43,
-    "country": "Tunísia",
-    "street": "Avenue Habib Bourguiba, Túnis",
-    "latitude": 36.8003,
-    "longitude": 10.1815
+    "latitude": 43.95,
+    "longitude": -79.38,
+    "country": "Canada"
   },
   {
     "id": 44,
-    "country": "Tanzânia",
-    "street": "Sokoine Drive, Dar es Salaam",
-    "latitude": -6.7924,
-    "longitude": 39.2083
+    "latitude": 19.88,
+    "longitude": -98.98,
+    "country": "Mexico"
   },
   {
     "id": 45,
-    "country": "Angola",
-    "street": "Av. 4 de Fevereiro, Luanda",
-    "latitude": -8.8368,
-    "longitude": 13.2343
+    "latitude": -34.0,
+    "longitude": -58.08,
+    "country": "Argentina"
   },
   {
     "id": 46,
-    "country": "Venezuela",
-    "street": "Av. Francisco de Miranda, Caracas",
-    "latitude": 10.4911,
-    "longitude": -66.8791
+    "latitude": -33.45,
+    "longitude": -70.21,
+    "country": "Chile"
   },
   {
     "id": 47,
-    "country": "Equador",
-    "street": "Av. Amazonas, Quito",
-    "latitude": -0.2201,
-    "longitude": -78.5123
+    "latitude": -11.9,
+    "longitude": -76.44,
+    "country": "Peru"
   },
   {
     "id": 48,
-    "country": "Peru",
-    "street": "Av. Larco, Miraflores, Lima",
-    "latitude": -12.1219,
-    "longitude": -77.0306
+    "latitude": 5.01,
+    "longitude": -73.32,
+    "country": "Colombia"
   },
   {
     "id": 49,
-    "country": "Colômbia",
-    "street": "Carrera 7, Bogotá",
-    "latitude": 4.6097,
-    "longitude": -74.0817
+    "latitude": 51.95,
+    "longitude": 0.78,
+    "country": "UK"
   },
   {
     "id": 50,
-    "country": "Chile",
-    "street": "Av. Providencia, Santiago",
-    "latitude": -33.4327,
-    "longitude": -70.6235
+    "latitude": 49.45,
+    "longitude": 2.35,
+    "country": "France"
+  },
+  {
+    "id": 51,
+    "latitude": 52.52,
+    "longitude": 13.55,
+    "country": "Germany"
+  },
+  {
+    "id": 52,
+    "latitude": 40.56,
+    "longitude": -3.4,
+    "country": "Spain"
+  },
+  {
+    "id": 53,
+    "latitude": 39.02,
+    "longitude": -8.68,
+    "country": "Portugal"
+  },
+  {
+    "id": 54,
+    "latitude": 42.35,
+    "longitude": 13.09,
+    "country": "Italy"
+  },
+  {
+    "id": 55,
+    "latitude": 52.97,
+    "longitude": 5.64,
+    "country": "Netherlands"
+  },
+  {
+    "id": 56,
+    "latitude": 50.85,
+    "longitude": 5.25,
+    "country": "Belgium"
+  },
+  {
+    "id": 57,
+    "latitude": 59.48,
+    "longitude": 18.06,
+    "country": "Sweden"
+  },
+  {
+    "id": 58,
+    "latitude": 60.21,
+    "longitude": 10.9,
+    "country": "Norway"
+  },
+  {
+    "id": 59,
+    "latitude": 60.62,
+    "longitude": 25.24,
+    "country": "Finland"
+  },
+  {
+    "id": 60,
+    "latitude": 56.27,
+    "longitude": 13.01,
+    "country": "Denmark"
+  },
+  {
+    "id": 61,
+    "latitude": -22.9,
+    "longitude": -42.6,
+    "country": "Brazil"
+  },
+  {
+    "id": 62,
+    "latitude": 40.86,
+    "longitude": -73.25,
+    "country": "USA"
+  },
+  {
+    "id": 63,
+    "latitude": 43.95,
+    "longitude": -78.48,
+    "country": "Canada"
+  },
+  {
+    "id": 64,
+    "latitude": 19.88,
+    "longitude": -99.13,
+    "country": "Mexico"
+  },
+  {
+    "id": 65,
+    "latitude": -34.0,
+    "longitude": -58.23,
+    "country": "Argentina"
+  },
+  {
+    "id": 66,
+    "latitude": -33.45,
+    "longitude": -70.36,
+    "country": "Chile"
+  },
+  {
+    "id": 67,
+    "latitude": -11.9,
+    "longitude": -76.59,
+    "country": "Peru"
+  },
+  {
+    "id": 68,
+    "latitude": 5.01,
+    "longitude": -73.47,
+    "country": "Colombia"
+  },
+  {
+    "id": 69,
+    "latitude": 51.95,
+    "longitude": 0.63,
+    "country": "UK"
+  },
+  {
+    "id": 70,
+    "latitude": 49.45,
+    "longitude": 3.25,
+    "country": "France"
+  },
+  {
+    "id": 71,
+    "latitude": 52.52,
+    "longitude": 13.4,
+    "country": "Germany"
+  },
+  {
+    "id": 72,
+    "latitude": 40.56,
+    "longitude": -3.55,
+    "country": "Spain"
+  },
+  {
+    "id": 73,
+    "latitude": 39.02,
+    "longitude": -8.83,
+    "country": "Portugal"
+  },
+  {
+    "id": 74,
+    "latitude": 42.35,
+    "longitude": 12.94,
+    "country": "Italy"
+  },
+  {
+    "id": 75,
+    "latitude": 52.97,
+    "longitude": 5.49,
+    "country": "Netherlands"
+  },
+  {
+    "id": 76,
+    "latitude": 50.85,
+    "longitude": 5.1,
+    "country": "Belgium"
+  },
+  {
+    "id": 77,
+    "latitude": 59.48,
+    "longitude": 18.96,
+    "country": "Sweden"
+  },
+  {
+    "id": 78,
+    "latitude": 60.21,
+    "longitude": 10.75,
+    "country": "Norway"
+  },
+  {
+    "id": 79,
+    "latitude": 60.62,
+    "longitude": 25.09,
+    "country": "Finland"
+  },
+  {
+    "id": 80,
+    "latitude": 56.27,
+    "longitude": 12.86,
+    "country": "Denmark"
+  },
+  {
+    "id": 81,
+    "latitude": -22.9,
+    "longitude": -42.75,
+    "country": "Brazil"
+  },
+  {
+    "id": 82,
+    "latitude": 40.86,
+    "longitude": -73.4,
+    "country": "USA"
+  },
+  {
+    "id": 83,
+    "latitude": 43.95,
+    "longitude": -78.63,
+    "country": "Canada"
+  },
+  {
+    "id": 84,
+    "latitude": 19.88,
+    "longitude": -98.23,
+    "country": "Mexico"
+  },
+  {
+    "id": 85,
+    "latitude": -34.0,
+    "longitude": -58.38,
+    "country": "Argentina"
+  },
+  {
+    "id": 86,
+    "latitude": -33.45,
+    "longitude": -70.51,
+    "country": "Chile"
+  },
+  {
+    "id": 87,
+    "latitude": -11.9,
+    "longitude": -76.74,
+    "country": "Peru"
+  },
+  {
+    "id": 88,
+    "latitude": 5.01,
+    "longitude": -73.62,
+    "country": "Colombia"
+  },
+  {
+    "id": 89,
+    "latitude": 51.95,
+    "longitude": 0.48,
+    "country": "UK"
+  },
+  {
+    "id": 90,
+    "latitude": 49.45,
+    "longitude": 3.1,
+    "country": "France"
+  },
+  {
+    "id": 91,
+    "latitude": 52.52,
+    "longitude": 14.3,
+    "country": "Germany"
+  },
+  {
+    "id": 92,
+    "latitude": 40.56,
+    "longitude": -3.7,
+    "country": "Spain"
+  },
+  {
+    "id": 93,
+    "latitude": 39.02,
+    "longitude": -8.98,
+    "country": "Portugal"
+  },
+  {
+    "id": 94,
+    "latitude": 42.35,
+    "longitude": 12.79,
+    "country": "Italy"
+  },
+  {
+    "id": 95,
+    "latitude": 52.97,
+    "longitude": 5.34,
+    "country": "Netherlands"
+  },
+  {
+    "id": 96,
+    "latitude": 50.85,
+    "longitude": 4.95,
+    "country": "Belgium"
+  },
+  {
+    "id": 97,
+    "latitude": 59.48,
+    "longitude": 18.81,
+    "country": "Sweden"
+  },
+  {
+    "id": 98,
+    "latitude": 60.21,
+    "longitude": 11.65,
+    "country": "Norway"
+  },
+  {
+    "id": 99,
+    "latitude": 60.62,
+    "longitude": 24.94,
+    "country": "Finland"
+  },
+  {
+    "id": 100,
+    "latitude": 56.27,
+    "longitude": 12.71,
+    "country": "Denmark"
   }
 ]
