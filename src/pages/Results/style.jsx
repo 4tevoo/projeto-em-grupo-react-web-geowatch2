@@ -94,8 +94,6 @@ export const StyledMapContainer = styled(MapContainer)`
     
 `;
 
-
-
 export const StyledRestCountries = styled.div`
     padding: 20px;
     display: grid;
@@ -111,7 +109,8 @@ export const StyledRestCountries = styled.div`
 `;
 
 export const StyledFlag = styled.img`
-    max-height: 140px;
+    max-height: 250px;
+    aspect-ratio: 4/5;
     width: 100%;
     grid-area: ${props => props.area};
 `;
