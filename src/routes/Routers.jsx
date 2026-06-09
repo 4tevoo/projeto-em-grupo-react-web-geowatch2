@@ -6,13 +6,18 @@ import { GoogleMap } from "../pages/GoogleMap/index.jsx";
 import { Results } from "../pages/Results/index.jsx";
 import { Login } from "../pages/Login/index.jsx";
 import { Cadastro } from "../pages/Cadastro/index.jsx"
+import { Main } from "../pages/Main/index.jsx"
+import { Perfil } from "../pages/PerfilUsuario/index.jsx";
+import RankingPage from "../pages/Rank/index.jsx";
 
 export const Routers = () => {
     return (
         <Routes>
+
             {}
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/main" element={<Main />} />
 
             {/* Rotas Privadas pra testar por enquanto, colocar depois em volta do perfil*/}
             <Route element={<Layout />}>
@@ -26,9 +31,13 @@ export const Routers = () => {
                         <Results />
                     </RotaPrivada>
                 }/>
-            </Route>
+                <Route path="/perfil" element={<Perfil/>}/>
+
+                <Route path="/ranking" element={<RankingPage/>}/>
+=======
 
             <Route path="*" element={<Page404 />}/>
+            </Route>
         </Routes>
     )
 }
