@@ -62,7 +62,7 @@ export const FreqResposta = styled.p`
     line-height: 1.6;
 `;
 
-export const faqs = [
+export const freq = [
     {
         pergunta: "O que é GeoWatch?",
         resposta: "GeoWatch é um jogo de geografia em quem você é largado em algum lugar do mundo e sua missão é encontrar pistas e advinhar a sua localização no mapa."
@@ -115,17 +115,18 @@ export default function OitavoBloco() {
             <ColunaFreq>
                 <RodapeLabel>PERGUNTAS FREQUENTES</RodapeLabel>
 
-                {freq.map((freqs, index) => (
-                    <FreqItem key={index} onClick={() => toggleFaq(index)}>
-                        <FreqPergunta>
-                            {freq.pergunta}
-                            <span>{aberto === index ? "-" : "+"}</span>
-                        </FreqPergunta>
-                        {aberto === index && (
-                            <FreqResposta>{freq.resposta}</FreqResposta>
-                        )}
-                    </FreqItem>
-                ))}
+                {freq.map((frequencia, index) => (
+        <FreqItem key={index} onClick={() => toggleFreq(index)}>
+            <FreqPergunta>
+                {frequencia.pergunta}
+                <span>{pergunta === index ? "-" : "+"}</span>
+            </FreqPergunta>
+            {pergunta === index && (
+                <FreqResposta>{frequencia.resposta}</FreqResposta>
+            )}
+
+        </FreqItem>
+    ))}
             </ColunaFreq>
         </RodapeWrapper>
         
