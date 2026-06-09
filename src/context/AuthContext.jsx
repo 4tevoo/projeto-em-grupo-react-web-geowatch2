@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, useEffect } from 'react';
-import { api } from '../services/api';
 import { userService } from '../services/usuariosService';
 
 const AuthContext = createContext();
@@ -8,8 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [usuario, setUsuario] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Dentro do seu AuthContext.jsx, substitua o useEffect por este:
-
   useEffect(() => {
     const checkToken = async () => {
       const tokenSalvo = localStorage.getItem('userToken');
@@ -17,7 +14,9 @@ export const AuthProvider = ({ children }) => {
       if (tokenSalvo) {
         try {
           const { data } = await userService.listarTodos();
-          const usuarioLogado = data.find(u => u.token === tokenSalvo);
+          
+          const listaUsuarios = Array.isArray(data) ? data : (data.items || []);
+          const usuarioLogado = listaUsuarios.find(u => u.token === tokenSalvo);
 
           if (usuarioLogado) {
             setUsuario(usuarioLogado);
