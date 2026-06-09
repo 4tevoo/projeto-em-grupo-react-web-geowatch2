@@ -63,7 +63,10 @@ export const Results = () => {
                     />
                 </StyledMapContainer>
             </MapWrapper>
-            <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>
+
+            {gameData.round <= 4 && <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>}
+            {gameData.round == 5 && <Link id='nextRound' to={'/ranking'}>Finalizar Partida</Link>}
+
             {countryData && (
                 <StyledCard>
                     <StyledRestCountries>
