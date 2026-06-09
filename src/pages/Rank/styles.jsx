@@ -27,12 +27,12 @@ export const spin = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   background: ${COLORS.bg};
   color: ${COLORS.white};
   font-family: 'DM Sans', 'Segoe UI', sans-serif;
   position: relative;
-  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 export const GridBg = styled.div`

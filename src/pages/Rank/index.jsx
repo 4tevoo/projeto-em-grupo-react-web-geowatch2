@@ -25,7 +25,7 @@ export default function RankingPage() {
     setError(null);
     try {
       const { data } = await getRanking();
-      setRawPlayers(data);
+      setRawPlayers(data.slice(0, 50));
     } catch (err) {
       setError('Não foi possível carregar o ranking. Tente novamente.');
       console.error(err);
@@ -36,9 +36,11 @@ export default function RankingPage() {
 
   useEffect(() => { fetchRanking(); }, []);
 
-  useEffect(() => {
+useEffect(() => {
     if (!rawPlayers.length) return;
-    const sorted = [...rawPlayers].sort((a, b) => (b[sortBy] ?? 0) - (a[sortBy] ?? 0));
+    const sorted = [...rawPlayers]
+      .sort((a, b) => (b[sortBy] ?? 0) - (a[sortBy] ?? 0))
+      .slice(0, 50);
     setPlayers(sorted);
   }, [rawPlayers, sortBy]);
 
