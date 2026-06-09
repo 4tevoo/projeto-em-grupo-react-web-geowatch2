@@ -16,4 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         position: relative;
         overflow: hidden;
     }
+    #root{
+        height: 100vh;
+    }
 `
