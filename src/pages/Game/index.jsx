@@ -10,7 +10,7 @@ import { useResult } from '../../context/ResultContext.jsx';
 
 export const GoogleMap = () => {
     
-    const { setGameData, gameData, posicoesValidas } = useResult()
+    const { setGameData, gameData, posicoesValidas, countryCode } = useResult()
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
@@ -100,7 +100,9 @@ export const GoogleMap = () => {
             nomeUsuario: usuario.nome,
             pontos: [...gameData.scores, score],
             paises: [...gameData.countries, randomSeed.country],
-            distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)]
+            distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)],
+            data: Date.now(),
+            opcao: countryCode
             })
         }
 
