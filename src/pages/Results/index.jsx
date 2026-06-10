@@ -130,7 +130,7 @@ export const Results = () => {
             </MapWrapper>
 
             {gameData.round <= 4 && <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>}
-            {gameData.round == 5 && <Link id='finalRound' to={'/ranking'} onClick={() => wipeMatch()}>Finalizar Partida</Link>}
+            {gameData.round == 5 && <Link id='finalRound' to={'/'} onClick={() => wipeMatch()}>Finalizar Partida</Link>}
 
             {countryData && (
                 <StyledCard>
