@@ -6,7 +6,7 @@ export const ButtonHud = styled.button`
     z-index: 10;
     background-color: ${({ $isClicked }) => 
     $isClicked ? '#22D57F' : '#444'};
-    width: 100%;
+    width: 80%;
     height: 7.5vh;
     margin-top: 10px;
     border-radius: 50px;
@@ -17,9 +17,13 @@ export const ButtonHud = styled.button`
     color: #FEFFFE;
     font-size: 2rem;
     font-weight: bolder;
-    opacity: 0.7;
     cursor: pointer;
     transition: all 0.3s ease;
+    
+    @media (min-width: 992px) {
+        width: 100%;
+        opacity: 0.7;
+    }
 
     &:hover {
         transform: ${({ $isClicked }) => 
@@ -40,18 +44,21 @@ export const HudContainer = styled.div`
     bottom: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    &:hover ${MapWrapper} {
+    @media (min-width: 992px) {
+        &:hover ${MapWrapper} {
         width: 35vw;
         height: 35vh;
-    }
-
-    &:hover ${StyledMapContainer} {
-        opacity: 1;
-    }
-
-    &:hover ${ButtonHud} {
-        opacity: 1;
+        }
+    
+        &:hover ${StyledMapContainer} {
+            opacity: 1;
+        }
+    
+        &:hover ${ButtonHud} {
+            opacity: 1;
+        }
     }
 `;
 
@@ -59,7 +66,7 @@ export const Points = styled.div`
     z-index: 10;
     margin-bottom: 10px; 
     height: 5vh;
-    width: 100%;
+    width: 80%;
     display: grid;
     place-items: center;
     background-color: #00000080;
@@ -68,5 +75,9 @@ export const Points = styled.div`
     color: #FEFFFE;
     font-size: 1.25rem;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold
+    font-weight: bold;
+
+    @media (min-width: 992px) {
+        width: 100%;
+    }
 `;
