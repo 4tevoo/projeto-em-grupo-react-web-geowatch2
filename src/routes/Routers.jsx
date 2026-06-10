@@ -16,14 +16,14 @@ export const Routers = () => {
             { }
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
-                <Route path="/geowatch2" element={
-                    <GoogleMap />
-                } />
             { }
             <Route element={<Layout />}>
                 <Route path="/" element={<Main />} />
                 <Route path="/results" element={
                     <Results />
+                } />
+                <Route path="/geowatch2" element={
+                    <GoogleMap />
                 } />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/ranking" element={<RankingPage />} />

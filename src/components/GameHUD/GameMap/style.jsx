@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { MapContainer } from 'react-leaflet/MapContainer'
 
 export const MapWrapper = styled.div`
-    width: 30vw;
-    height: 30vh;
+    width: 25vw;
+    height: 25vh;
     border-radius: 25px;
     overflow: hidden;
     transition: 0.3s ease;

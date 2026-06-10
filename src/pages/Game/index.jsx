@@ -121,7 +121,7 @@ export const GoogleMap = () => {
             onLoad={() => setIsLoading(false)}
             >
             </GoogleView>
-            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()} score={gameData.round}/>
+            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()} sumScore={gameData.finalScore}/>
         </>
     )
 }
