@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx';
 import { pontuacaoService } from '../../services/pontuacaoService.js';
 import { useAuth } from '../../context/AuthContext.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useResult } from '../../context/ResultContext.jsx';
 
@@ -17,6 +17,12 @@ export const GoogleMap = () => {
     const [isLoading, setIsLoading] = useState(true)
     const { usuario } = useAuth();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(gameData.round === 5) {
+            wipeMatch()
+        }
+    }, [])
 
     function getRandomSeed() {
         const random = posicoesValidas[Math.floor(Math.random() * (posicoesValidas.length - 1))]
@@ -41,9 +47,6 @@ export const GoogleMap = () => {
             }
         }
 
-        console.log(maiorCoord)
-        console.log(menorCoord)
-        console.log(getDistance(maiorCoord, menorCoord))
         return getDistance(maiorCoord, menorCoord)
     }
 
@@ -63,6 +66,20 @@ export const GoogleMap = () => {
     function truncateToDecimals(number, digits) {
     const multiplier = Math.pow(10, digits);
     return Math.trunc(number * multiplier) / multiplier;
+    }
+
+    function wipeMatch() {
+        setGameData({
+            scores: [],
+            finalScore: 0,
+            round: 0,
+            countries: [],
+            guessLats: [],
+            guessLngs: [],
+            actualLats: [],
+            actualLngs: [],
+            distances: []
+        })
     }
 
     function getScore() {
