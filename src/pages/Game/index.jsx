@@ -1,4 +1,3 @@
-import { locais } from '../../data/locais.jsx'
 import { GameHUD } from '../../components/GameHUD/index.jsx';
 import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx';
@@ -11,24 +10,48 @@ import { useResult } from '../../context/ResultContext.jsx';
 
 export const GoogleMap = () => {
     
+    const { setGameData, gameData, posicoesValidas } = useResult()
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
     const [isLoading, setIsLoading] = useState(true)
-    const { setGameData, gameData } = useResult()
     const { usuario } = useAuth();
     const navigate = useNavigate();
 
     function getRandomSeed() {
-        const random = locais[Math.floor(Math.random() * (locais.length - 1))]
+        const random = posicoesValidas[Math.floor(Math.random() * (posicoesValidas.length - 1))]
         return random
     }
 
-    function getDistance() {
-        const locationLatitudeRadians = location[0] * Math.PI / 180
-        const locationLongitudeRadians = location[1] * Math.PI / 180
-        const positionLatitudeRadians = position[0] * Math.PI / 180
-        const positionLongitudeRadians = position[1] * Math.PI / 180
+    function getScale() {
+        let maiorCoord = [0, 0]
+        let menorCoord = [0, 0]
+        for(let i = 0; i < posicoesValidas.length; i++) {
+            if(posicoesValidas[i].latitude > maiorCoord[0]) {
+                maiorCoord[0] = posicoesValidas[i].latitude
+            }
+            if(posicoesValidas[i].longitude > maiorCoord[1]) {
+                maiorCoord[1] = posicoesValidas[i].longitude
+            }
+            if(posicoesValidas[i].latitude < menorCoord[0]) {
+                menorCoord[0] = posicoesValidas[i].latitude
+            }
+            if(posicoesValidas[i].longitude < menorCoord[1]) {
+                menorCoord[1] = posicoesValidas[i].longitude
+            }
+        }
+
+        console.log(maiorCoord)
+        console.log(menorCoord)
+        console.log(getDistance(maiorCoord, menorCoord))
+        return getDistance(maiorCoord, menorCoord)
+    }
+
+    function getDistance(location1, location2) {
+        const locationLatitudeRadians = location1[0] * Math.PI / 180
+        const locationLongitudeRadians = location1[1] * Math.PI / 180
+        const positionLatitudeRadians = location2[0] * Math.PI / 180
+        const positionLongitudeRadians = location2[1] * Math.PI / 180
 
         const deltaLatitude = Math.abs(locationLatitudeRadians - positionLatitudeRadians)
         const deltaLongitude = Math.abs(locationLongitudeRadians - positionLongitudeRadians)
@@ -43,7 +66,7 @@ export const GoogleMap = () => {
     }
 
     function getScore() {
-        const score = Math.floor(5000 * Math.pow(Math.E, (-10*getDistance()/7500)))
+        const score = Math.ceil(5000 * Math.pow(Math.E, (-10*getDistance(location, position)/getScale())))
         let sumScore = score;
         let round = 0;
 
@@ -60,7 +83,7 @@ export const GoogleMap = () => {
             nomeUsuario: usuario.nome,
             pontos: [...gameData.scores, score],
             paises: [...gameData.countries, randomSeed.country],
-            distancias: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
+            distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)]
             })
         }
 
@@ -73,7 +96,7 @@ export const GoogleMap = () => {
             guessLngs: [...gameData.guessLngs, position[1]],
             actualLats: [...gameData.actualLats, location[0]],
             actualLngs: [...gameData.actualLngs, location[1]],
-            distances: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
+            distances: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)]
         })
 
 
