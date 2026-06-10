@@ -11,7 +11,7 @@ export default function QuartoBloco() {
                     VOLTA AO MUNDO
                 </BlocoTitulo>
                 <BlocoTexto>
-                    Viaje pelos cinco continentes e descubra sua localização.
+                    Viaje pelos seis continentes e descubra sua localização.
                 </BlocoTexto>
                 <BotaoJogar>JOGAR NO JAPÃO</BotaoJogar>
             </div>
