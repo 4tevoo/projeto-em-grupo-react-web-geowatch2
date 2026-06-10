@@ -30,7 +30,7 @@ export const StyledContainer = styled.div`
     text-align: center;
     padding: 20px 0;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
     color: #fff;
     justify-content: flex-start;
     align-items: center;
@@ -39,7 +39,7 @@ export const StyledContainer = styled.div`
     overflow-y: auto;
     overflow-x: hidden;
 
-    #nextRound{
+    #nextRound,#finalRound{
         text-decoration: none;
         color: #fff;
         border: 1px solid #222;
@@ -50,7 +50,7 @@ export const StyledContainer = styled.div`
         font-size: 1.7rem;
         font-weight: bolder;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 20px;
             
     }
     &::before {
@@ -107,6 +107,7 @@ export const StyledMapContainer = styled(MapContainer)`
 export const StyledRestCountries = styled.div`
     padding: 20px;
     display: grid;
+    font-size: 1.2rem;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
