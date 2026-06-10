@@ -1,4 +1,4 @@
-import { locais } from '../../data/locais'
+import { locais } from '../../data/locais.jsx'
 import { GameHUD } from '../../components/GameHUD/index.jsx';
 import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx';
@@ -87,9 +87,11 @@ export const GoogleMap = () => {
 
     return (
         <>
-            <div className="App">
-                <DotLottieReact src="/Loading.json" autoplay loop />
-            </div>
+            {isLoading && (
+                <div className="App">
+                    <DotLottieReact src="/Loading.json" autoplay loop />
+                </div>
+            )}
             <GoogleView
             loading="lazy"
             src={streetViewURL}
