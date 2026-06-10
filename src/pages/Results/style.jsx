@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { MapContainer } from 'react-leaflet/MapContainer'
 import L from 'leaflet'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export const estilosCores = {
 
@@ -68,6 +69,13 @@ export const StyledContainer = styled.div`
         flex-shrink: 0;
     }
 `;
+export const StyledCongrats = styled(DotLottieReact)`
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -50px;
+
+` 
 export const StyledCard = styled.div`
     
     border: 1px solid #222;

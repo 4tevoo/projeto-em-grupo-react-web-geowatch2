@@ -1,11 +1,12 @@
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores } from './style.jsx';
+import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores, StyledCongrats } from './style.jsx';
 import { useEffect, useState } from 'react';
 import { useResult } from '../../context/ResultContext.jsx';
 import axios from 'axios';
 import { FinalResult } from '../../components/FinalResult/index.jsx';
 import { RoundResult } from '../../components/RoundResult/index.jsx';
 import { Link } from 'react-router';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 export const Results = () => {
@@ -13,6 +14,7 @@ export const Results = () => {
     const { gameData, setGameData } = useResult()
 
     const [countryData, setCountryData] = useState(null)
+    const [congrats, setCongrats] = useState(false)
 
     useEffect(() => {
 
@@ -25,6 +27,13 @@ export const Results = () => {
             }
         }
         countriesAPI()
+
+        if(gameData.scores[gameData.round - 1] === 5000) {
+            setCongrats(true);
+            setTimeout(()=>{
+                setCongrats(false)
+            },3500)
+        }
 
     }, [gameData.countries, gameData.round])
 
@@ -59,6 +68,8 @@ export const Results = () => {
     return (
 
         <StyledContainer>
+
+            {congrats && <StyledCongrats backgroundColor='tranparent' src="/Congrats.json" autoplay loop />}
             <StyledCard>
                 <StyledResults>
                     {gameData.round == 5 && <FinalResult color={finalScoreColor(gameData.finalScore)} finalScore={gameData.finalScore} ></FinalResult>}
@@ -67,7 +78,8 @@ export const Results = () => {
             </StyledCard>
             <MapWrapper>
                 <StyledMapContainer center={[gameData.actualLats[gameData.round -1 ], gameData.actualLngs[gameData.round -1 ]]} zoom={5}>
-                    <TileLayer
+                    <TileLayer 
+                        noWrap={true}
                         url={`https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
                         attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                         tileSize={512}
