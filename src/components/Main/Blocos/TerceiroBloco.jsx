@@ -1,6 +1,7 @@
 import { Bloco, BlocoTitulo, BlocoTexto } from "../../../pages/Main/style";
 import { colors } from "../../../pages/Main/style";
 import Russia from "../../../assets/russia.png"
+import { BotaoJogar } from "../../../pages/Main/style";
 
 export default function TerceiroBloco() {
     return (
@@ -12,6 +13,7 @@ export default function TerceiroBloco() {
                 <BlocoTexto>
                     Se aventure pelas ruas! Você consegue identificar?
                 </BlocoTexto>
+                <BotaoJogar>JOGAR NA RÚSSIA</BotaoJogar>
             </div>
         </Bloco>
     );

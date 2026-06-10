@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../../pages/Main/style";
 
 export const CardWrapper = styled.div`
-    background-color: #1e1e3a;
+    background-color: ${colors.black};
     align-self: center;
     margin-left: auto;
     padding: 2rem;
@@ -39,6 +39,7 @@ export const BotaoBase = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 `;
 
 export const BotaoGoogle = styled(BotaoBase)`

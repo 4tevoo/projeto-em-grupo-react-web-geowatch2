@@ -1,4 +1,7 @@
 import { CardWrapper, CardTitulo, BotaoGoogle, BotaoApple, BotaoFacebook, BotaoEmail, Divisor, CardRodape, BotaoSessao } from "./style";
+import { FcGoogle } from "react-icons/fc";
+import { FaApple } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 export default function CardLogin() {
     return(
@@ -7,16 +10,19 @@ export default function CardLogin() {
                 Inscreva-se para jogar
             </CardTitulo>
             <BotaoGoogle>
-                "Adicionar símbolo" Continuar com "teste"
+                <FcGoogle style={{ fontSize: '1.3rem' }} />
+                Inscreva-se com conta Google
             </BotaoGoogle>
             <BotaoApple>
-                "Adicionar símbolo" Continuar com "teste"
+                <FaApple style={{ fontSize: '1.3rem' }} />
+                Inscreva-se com conta Apple
             </BotaoApple>
             <BotaoFacebook>
-                "Adicionar símbolo" Continuar com "teste"
+                <FaFacebook style={{ fontSize: '1.3rem' }} />
+                Inscreva-se com facebook
             </BotaoFacebook>
             <BotaoEmail>
-                "Adicionar símbolo" Continuar com "teste"
+                Inscreva-se com email
             </BotaoEmail>
 
             <Divisor />

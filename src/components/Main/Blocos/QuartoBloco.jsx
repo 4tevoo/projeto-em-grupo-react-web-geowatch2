@@ -1,6 +1,7 @@
 import { Bloco, BlocoTitulo, BlocoTexto } from "../../../pages/Main/style";
 import { colors } from "../../../pages/Main/style";
 import City from "../../../assets/cityCyber.png"
+import { BotaoJogar } from "../../../pages/Main/style";
 
 export default function QuartoBloco() {
     return (
@@ -12,6 +13,7 @@ export default function QuartoBloco() {
                 <BlocoTexto>
                     Viaje pelos cinco continentes e descubra sua localização.
                 </BlocoTexto>
+                <BotaoJogar>JOGAR NO JAPÃO</BotaoJogar>
             </div>
         </Bloco>
     );
