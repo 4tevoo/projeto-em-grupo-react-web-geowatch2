@@ -26,7 +26,7 @@ export const Login = () => {
                 const token = Math.random().toString(36).substring(2);
                 await userService.atualizarToken(usuarioEncontrado.id, { ...usuarioEncontrado, token });
                 login(usuarioEncontrado, token);
-                navigate('/geowatch2');
+                navigate('/');
             } else {
                 toast.error("E-mail ou senha incorretos.");
             }
