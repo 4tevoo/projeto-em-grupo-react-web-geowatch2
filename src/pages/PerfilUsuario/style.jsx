@@ -11,3 +11,16 @@ export const ContainerPerfil = styled.div`
     height: 100vh;
     font-family: "Montserrat";
 `
+
+export const BotaoLogout = styled.button`
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+        opacity: 0.8;
+        color: red;
+    }
+`
