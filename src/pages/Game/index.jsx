@@ -1,10 +1,11 @@
-import { locais } from '../../data/locais'
+import { locais } from '../../data/locais.jsx'
 import { GameHUD } from '../../components/GameHUD/index.jsx';
 import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx';
 import { pontuacaoService } from '../../services/pontuacaoService.js';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useState } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useResult } from '../../context/ResultContext.jsx';
 
 
@@ -13,6 +14,7 @@ export const GoogleMap = () => {
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
+    const [isLoading, setIsLoading] = useState(true)
     const { setGameData, gameData } = useResult()
     const { usuario } = useAuth();
     const navigate = useNavigate();
@@ -85,9 +87,15 @@ export const GoogleMap = () => {
 
     return (
         <>
+            {isLoading && (
+                <div className="App">
+                    <DotLottieReact src="/Loading.json" autoplay loop />
+                </div>
+            )}
             <GoogleView
             loading="lazy"
             src={streetViewURL}
+            onLoad={() => setIsLoading(false)}
             >
             </GoogleView>
             <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()} score={gameData.round}/>

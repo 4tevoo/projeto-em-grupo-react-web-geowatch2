@@ -1,11 +1,8 @@
-import OitavoBloco from "../../components/Main/Blocos/OitavoBloco";
+import RodapeBloco from "../../components/Main/Blocos/RodapeBloco";
 import PrimeiroBloco from "../../components/Main/Blocos/PrimeiroBloco";
-import QuartoBloco from "../../components/Main/Blocos/QuartoBloco";
-import QuintoBloco from "../../components/Main/Blocos/QuintoBloco";
 import SegundoBloco from "../../components/Main/Blocos/SegundoBloco";
-import SetimoBloco from "../../components/Main/Blocos/SetimoBloco";
-import SextoBloco from "../../components/Main/Blocos/SextoBloco";
 import TerceiroBloco from "../../components/Main/Blocos/TerceiroBloco";
+import QuartoBloco from "../../components/Main/Blocos/QuartoBloco";
 import { MainWrapper } from "./style";
 
 export function Main() {
@@ -15,7 +12,7 @@ export function Main() {
             <SegundoBloco />
             <TerceiroBloco />
             <QuartoBloco />
-            <OitavoBloco />
+            <RodapeBloco />
         </MainWrapper>        
     );
 }

@@ -32,7 +32,6 @@ export const Bloco = styled.section`
         height: 100%;
         background-color: ${({ $bg }) => $bg || '#1a1a2e'};
         opacity: 0.50;
-        z-index: 0;
     }
 
     & > * {
@@ -176,4 +175,22 @@ export const FreqResposta = styled.p`
     font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
     line-height: 1.6;
+`;
+
+export const BotaoJogar = styled.button`
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.8rem;
+    border: 3px solid ${colors.white};
+    background: ${colors.red};
+    color: ${colors.white};
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    border-radius: 999px;
+    cursor: pointer;
+
+    &:hover {
+        background: ${colors.white};
+        color: ${colors.red};
+    }
 `;

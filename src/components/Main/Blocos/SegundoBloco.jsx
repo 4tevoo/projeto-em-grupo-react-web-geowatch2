@@ -1,6 +1,7 @@
 import { Bloco, BlocoTexto, BlocoTitulo } from "../../../pages/Main/style";
 import { colors } from "../../../pages/Main/style";
 import FundoRj from "../../../assets/fundoRj.png"
+import { BotaoJogar } from "../../../pages/Main/style";
 
 export default function SegundoBloco() {
     return (
@@ -12,6 +13,7 @@ export default function SegundoBloco() {
                 <BlocoTexto>
                     Viaje por paisagens únicas e teste seus conhecimentos geográficos.
                 </BlocoTexto>
+                <BotaoJogar>JOGAR NO BRASIL</BotaoJogar>
             </div>
         </Bloco>
     );

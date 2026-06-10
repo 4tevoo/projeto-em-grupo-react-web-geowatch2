@@ -20,7 +20,7 @@ export default function PrimeiroBloco() {
                 </TituloUm>
                 <BlocoTexto>
                     Seja jogado em qualquer lugar, das praias do Rio à Floresta Amazônica. 
-                    Descubra onde você está.. Junte-se a milhões de jogadores hoje!
+                    Descubra onde você está... Junte-se a milhões de jogadores hoje!
                 </BlocoTexto>
 
                 <InfoPlataformas style={{marginTop: '0.8rem', gap: '1.5rem'}}>
