@@ -10,7 +10,7 @@ export default function SegundoBloco() {
     const jogarPais = useNavigate();
 
     function jogarBrasil() {
-        setCountryCode("Brasil");
+        setCountryCode("BR");
         jogarPais('/geowatch2');
     }
 
