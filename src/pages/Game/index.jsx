@@ -3,20 +3,26 @@ import { useNavigate } from 'react-router';
 import { GoogleView } from './style.jsx';
 import { pontuacaoService } from '../../services/pontuacaoService.js';
 import { useAuth } from '../../context/AuthContext.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useResult } from '../../context/ResultContext.jsx';
 
 
 export const GoogleMap = () => {
     
-    const { setGameData, gameData, posicoesValidas } = useResult()
+    const { setGameData, gameData, posicoesValidas, countryCode } = useResult()
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const { usuario } = useAuth();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(gameData.round === 5) {
+            wipeMatch()
+        }
+    }, [])
 
     function getRandomSeed() {
         const random = posicoesValidas[Math.floor(Math.random() * (posicoesValidas.length - 1))]
@@ -41,9 +47,6 @@ export const GoogleMap = () => {
             }
         }
 
-        console.log(maiorCoord)
-        console.log(menorCoord)
-        console.log(getDistance(maiorCoord, menorCoord))
         return getDistance(maiorCoord, menorCoord)
     }
 
@@ -65,6 +68,20 @@ export const GoogleMap = () => {
     return Math.trunc(number * multiplier) / multiplier;
     }
 
+    function wipeMatch() {
+        setGameData({
+            scores: [],
+            finalScore: 0,
+            round: 0,
+            countries: [],
+            guessLats: [],
+            guessLngs: [],
+            actualLats: [],
+            actualLngs: [],
+            distances: []
+        })
+    }
+
     function getScore() {
         const score = Math.ceil(5000 * Math.pow(Math.E, (-10*getDistance(location, position)/getScale())))
         let sumScore = score;
@@ -83,7 +100,9 @@ export const GoogleMap = () => {
             nomeUsuario: usuario.nome,
             pontos: [...gameData.scores, score],
             paises: [...gameData.countries, randomSeed.country],
-            distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)]
+            distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)],
+            data: Date.now(),
+            opcao: countryCode
             })
         }
 
