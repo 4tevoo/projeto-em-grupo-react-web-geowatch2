@@ -32,7 +32,7 @@ export default function CardLogin() {
 
             <CardRodape>
                 Já tem uma conta?
-                <BotaoSessao>INICIAR SESSÃO</BotaoSessao>
+                <BotaoSessao onClick={() => botoesFuncao('/login')}>INICIAR SESSÃO</BotaoSessao>
             </CardRodape>
         </CardWrapper>
     );
