@@ -8,7 +8,8 @@ export const ContainerPerfil = styled.div`
     gap: 40px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     font-family: "Montserrat";
 `
 
