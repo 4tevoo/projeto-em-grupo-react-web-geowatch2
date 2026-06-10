@@ -8,7 +8,7 @@ export default function PrimeiroBloco() {
     return (
         <Bloco $bg={colors.purple} $img={Fundo}>
             <div >
-                <LogoImg src={Logo} alt="GeoWatch 2" style={{width: '180px', marginBottom: '0.8rem'}}/>
+                <LogoImg src={Logo} alt="GeoWatch 2" style={{width: '180px', marginBottom: '-1rem'}}/>
                 <TituloUm>
                     Explore o mundo!
                 </TituloUm>

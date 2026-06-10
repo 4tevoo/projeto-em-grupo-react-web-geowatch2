@@ -8,6 +8,7 @@ export const colors = {
     purple: '#4A2399',
     blue: '#105cad',
     grey: '#2B2D31',
+    black: '#232323',
 };
 
 export const Bloco = styled.section`
@@ -111,4 +112,68 @@ export const InfoTexto = styled.p`
     font-size: 0.8rem;
     font-family: 'Poppins', sans-serif;
     margin-top: 0.3rem;
+`;
+
+export const RodapeWrapper = styled.footer`
+    background-color: ${colors.black};
+    padding: 3rem 5%;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+`;
+
+export const RodapeInfo = styled.p`
+    margin-top: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: ${colors.white};
+    line-height: 1.8;
+`;
+
+export const RodapeLabel = styled.span`
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: ${colors.green};
+    letter-spacing: 1px;
+    font-weight: 700;
+`;
+
+export const RodapeLista = styled.ul`
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: ${colors.white};
+`;
+
+export const ColunaFreq = styled.div`
+    flex: 1;
+    min-width: 300px;
+`;
+
+export const FreqItem = styled.div`
+    border-bottom: 1px solid #333;
+    padding: 1rem 0;
+    cursor: pointer;
+`;
+
+export const FreqPergunta = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: ${colors.white};
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+`;
+
+export const FreqResposta = styled.p`
+    margin-top: 0.75rem;
+    color: ${colors.green};
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
 `;
