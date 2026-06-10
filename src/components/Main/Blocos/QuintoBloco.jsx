@@ -1,5 +1,5 @@
-import { Bloco, BlocoTitulo, BlocoTexto } from "../../pages/Main/style";
-import { colors } from "../../pages/Main/style";
+import { Bloco, BlocoTitulo, BlocoTexto } from "../../../pages/Main/style";
+import { colors } from "../../../pages/Main/style";
 
 export default function QuintoBloco() {
     return (

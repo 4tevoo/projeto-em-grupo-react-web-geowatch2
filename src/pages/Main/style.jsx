@@ -7,6 +7,7 @@ export const colors = {
     green: '#22D57F',
     purple: '#4A2399',
     blue: '#105cad',
+    grey: '#2B2D31',
 };
 
 export const Bloco = styled.section`
@@ -18,7 +19,7 @@ export const Bloco = styled.section`
 
     background-image: ${({ $img }) => $img ? `url(${$img})` : 'none'};
     background-size: cover;
-    background-position: center;
+    background-position: center 40%;
     background-color: ${({ $bg }) => $bg || '#1a1a2e'};
 
     &::before {
@@ -29,7 +30,7 @@ export const Bloco = styled.section`
         width: 100%;
         height: 100%;
         background-color: ${({ $bg }) => $bg || '#1a1a2e'};
-        opacity: 0.85;
+        opacity: 0.50;
         z-index: 0;
     }
 
@@ -40,18 +41,22 @@ export const Bloco = styled.section`
 `;
 
 export const BlocoTitulo = styled.h2`
-    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
     font-style: italic;
     font-weight: 900;
     color: ${colors.white};
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 `;
 
 export const BlocoTexto = styled.p`
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     max-width: 500px;
     color: ${colors.white};
-    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
     line-height: 1.6;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 `;
 
 export const BlocoBotao = styled.button`
@@ -75,3 +80,35 @@ export const MainWrapper = styled.div`
     height: 100vh;
 `
 
+export const LogoImg = styled.img`
+    width: 220px;
+    margin-bottom: 1.5rem;
+`;
+
+export const TituloUm = styled.h1`
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 1000;
+    color: ${colors.white};
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: -1rem;
+    margin-bottom: 1.7rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+`;
+
+export const InfoPlataformas = styled.div`
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+`;
+
+export const InfoTexto = styled.p`
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0.3rem;
+`;

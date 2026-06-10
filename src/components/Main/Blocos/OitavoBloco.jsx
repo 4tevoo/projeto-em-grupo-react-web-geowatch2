@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { colors } from "../../pages/Main/style";
+import { colors } from "../../../pages/Main/style";
 import styled from "styled-components";
 
 export const RodapeWrapper = styled.footer`
@@ -68,8 +68,8 @@ export const freq = [
         resposta: "GeoWatch é um jogo de geografia em quem você é largado em algum lugar do mundo e sua missão é encontrar pistas e advinhar a sua localização no mapa."
     },
     {
-        pergunta: "Dificuldade em entrar na minha conta.",
-        resposta: "Se esqueceu sua senha, clique em 'Já tem uma conta?' e depois em 'Esqueceu sua senha?'. Insira o email associado e você receberá um link para redefinir."
+        pergunta: "Quem são os desenvolvedores deste jogo?",
+        resposta: "Estêvão Viana Cunha, Gabriel Martins Chinelli Maia, Patrick Nunes Pires Melo de Souza, Mateus Tamaki Yoshisaki, Yuri Dos Santos Martins e Pedro Pinto Martins De Souza"
     },
     {
         pergunta: "GeoWatch está disponível na App Store e Google Play?",
