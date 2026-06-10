@@ -6,7 +6,9 @@ const COLORS = {
   surface2: '#3a1f6a',
   red:      '#B71813',
   white:    '#FEFFFE',
-  gold:     '#E6B43C',
+  gold:     '#FFD700',
+  silver:   '#C0C0C0',
+  bronze:   '#CD7F32',
   green:    '#22D57F',
   purple:   '#4A2399',
   muted:    '#a08cc0',
@@ -18,8 +20,8 @@ export const fadeUp = keyframes`
 `;
 
 export const pulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 0 rgba(230,180,60,0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(230,180,60,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(255,215,0,0); }
 `;
 
 export const spin = keyframes`
@@ -180,8 +182,8 @@ export const PodiumAvatar = styled.div`
   animation: ${({ $rank }) => $rank === 1 ? css`${pulse} 2s ease-in-out infinite` : 'none'};
 
   ${({ $rank }) => $rank === 1 && css`background: ${COLORS.gold};`}
-  ${({ $rank }) => $rank === 2 && css`background: ${COLORS.muted};`}
-  ${({ $rank }) => $rank === 3 && css`background: ${COLORS.red};`}
+  ${({ $rank }) => $rank === 2 && css`background: ${COLORS.silver};`}
+  ${({ $rank }) => $rank === 3 && css`background: ${COLORS.bronze};`}
 `;
 
 export const PodiumCrown = styled.div`
@@ -204,9 +206,13 @@ export const PodiumName = styled.div`
 export const PodiumPoints = styled.div`
   margin-top: 4px;
   font-size: 12px;
-  color: ${COLORS.green};
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  
+  ${({ $rank }) => $rank === 1 && css`color: ${COLORS.gold};`}
+  ${({ $rank }) => $rank === 2 && css`color: ${COLORS.silver};`}
+  ${({ $rank }) => $rank === 3 && css`color: ${COLORS.bronze};`}
+  ${({ $rank }) => !$rank && css`color: ${COLORS.green};`}
 `;
 
 export const PodiumBase = styled.div`
@@ -221,19 +227,19 @@ export const PodiumBase = styled.div`
   font-weight: 900;
 
   ${({ $rank }) => $rank === 1 && css`
-    background: rgba(230,180,60,0.15);
-    border: 1px solid rgba(230,180,60,0.35);
+    background: rgba(255,215,0,0.15);
+    border: 1px solid rgba(255,215,0,0.45);
     color: ${COLORS.gold};
   `}
   ${({ $rank }) => $rank === 2 && css`
-    background: rgba(160,140,192,0.12);
-    border: 1px solid rgba(160,140,192,0.25);
-    color: ${COLORS.muted};
+    background: rgba(192,192,192,0.12);
+    border: 1px solid rgba(192,192,192,0.35);
+    color: ${COLORS.silver};
   `}
   ${({ $rank }) => $rank === 3 && css`
-    background: rgba(183,24,19,0.15);
-    border: 1px solid rgba(183,24,19,0.35);
-    color: ${COLORS.red};
+    background: rgba(205,127,50,0.15);
+    border: 1px solid rgba(205,127,50,0.4);
+    color: ${COLORS.bronze};
   `}
 `;
 
@@ -331,7 +337,12 @@ export const StatCell = styled.div`
   font-size: 13px;
   font-variant-numeric: tabular-nums;
   font-weight: ${({ $bold }) => $bold ? '700' : '400'};
-  color: ${({ $accent }) => $accent ? COLORS.green : COLORS.muted};
+  color: ${({ $rank }) => {
+    if ($rank === 1) return COLORS.gold;
+    if ($rank === 2) return COLORS.silver;
+    if ($rank === 3) return COLORS.bronze;
+    return COLORS.green;
+  }};
 
   @media (max-width: 600px) {
     &.hide-mobile { display: none; }
@@ -390,8 +401,8 @@ export const PodiumAvatarImg = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid ${({ $rank }) =>
-    $rank === 1 ? '#E6B43C' :
-    $rank === 2 ? '#a08cc0' :
-    '#B71813'
+    $rank === 1 ? COLORS.gold :
+    $rank === 2 ? COLORS.silver :
+    COLORS.bronze
   };
 `;
