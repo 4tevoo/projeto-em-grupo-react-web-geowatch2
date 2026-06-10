@@ -10,7 +10,7 @@ import { Link } from 'react-router';
 
 export const Results = () => {
 
-    const { gameData } = useResult()
+    const { gameData, setGameData } = useResult()
 
     const [countryData, setCountryData] = useState(null)
 
@@ -25,9 +25,22 @@ export const Results = () => {
             }
         }
         countriesAPI()
-        console.log(gameData)
 
-    }, [gameData.countries, gameData.round, gameData])
+    }, [gameData.countries, gameData.round])
+
+    function wipeMatch() {
+        setGameData({
+            scores: [],
+            finalScore: 0,
+            round: 0,
+            countries: [],
+            guessLat: 0,
+            guessLng: 0,
+            actualLat: 0,
+            actualLng: 0,
+            distances: []
+        })
+    }
 
     return (
 
@@ -64,7 +77,7 @@ export const Results = () => {
             </MapWrapper>
 
             {gameData.round <= 4 && <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>}
-            {gameData.round == 5 && <Link id='nextRound' to={'/ranking'}>Finalizar Partida</Link>}
+            {gameData.round == 5 && <Link id='nextRound' to={'/ranking'} onClick={() => wipeMatch()}>Finalizar Partida</Link>}
 
             {countryData && (
                 <StyledCard>
