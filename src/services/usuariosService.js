@@ -1,8 +1,8 @@
 import { api } from './api';
 
 export const userService = {
-  cadastrar: (dados) => api.post('/usuarios', dados),
-  listarTodos: () => api.get('/usuarios'),
-  atualizarToken: (id, dados) => api.put(`/usuarios/${id}`, dados),
-  deletar: (id) => api.delete(`usuarios/${id}`)
+  cadastrar: async (dados) => api.post('/usuarios', dados),
+  listarTodos: async () => api.get('/usuarios'),
+  atualizarToken: async (id, dados) => api.put(`/usuarios/${id}`, dados),
+  deletar: async (id) => api.delete(`usuarios/${id}`)
 };
