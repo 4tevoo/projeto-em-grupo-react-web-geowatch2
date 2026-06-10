@@ -46,7 +46,7 @@ export default function OitavoBloco() {
                 <RodapeLabel>EXPLORAR</RodapeLabel>
                 <RodapeLista>
                     <li>Campeonato Serratec 2026.1</li>
-                    <li>Sobre nós</li>
+                    <li>Ranking</li>
                     <li>Loja</li>
                     <li></li>
                 </RodapeLista>
