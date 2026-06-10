@@ -177,3 +177,21 @@ export const FreqResposta = styled.p`
     font-size: 0.9rem;
     line-height: 1.6;
 `;
+
+export const BotaoJogar = styled.button`
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.8rem;
+    border: 3px solid ${colors.white};
+    background: ${colors.red};
+    color: ${colors.white};
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    border-radius: 999px;
+    cursor: pointer;
+
+    &:hover {
+        background: ${colors.white};
+        color: ${colors.red};
+    }
+`;
