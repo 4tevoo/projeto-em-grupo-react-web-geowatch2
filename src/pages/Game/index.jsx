@@ -69,10 +69,10 @@ export const GoogleMap = () => {
             finalScore: sumScore,
             round: round,
             countries: [...gameData.countries, randomSeed.country],
-            guessLat: position[0],
-            guessLng: position[1],
-            actualLat: location[0],
-            actualLng: location[1],
+            guessLats: [...gameData.guessLats, position[0]],
+            guessLngs: [...gameData.guessLngs, position[1]],
+            actualLats: [...gameData.actualLats, location[0]],
+            actualLngs: [...gameData.actualLngs, location[1]],
             distances: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
         })
 
