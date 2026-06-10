@@ -1,7 +1,9 @@
 import { locais } from '../../data/locais'
 import { GameHUD } from '../../components/GameHUD/index.jsx';
 import { useNavigate } from 'react-router';
-import { GoogleView } from './style.jsx'
+import { GoogleView } from './style.jsx';
+import { pontuacaoService } from '../../services/pontuacaoService.js';
+import { useAuth } from '../../context/AuthContext.jsx';
 import { useState } from 'react';
 import { useResult } from '../../context/ResultContext.jsx';
 
@@ -11,8 +13,8 @@ export const GoogleMap = () => {
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
-
     const { setGameData, gameData } = useResult()
+    const { usuario } = useAuth();
     const navigate = useNavigate();
 
     function getRandomSeed() {
@@ -50,6 +52,16 @@ export const GoogleMap = () => {
             })
         }
 
+        if(round == 5 && usuario != null) {
+            pontuacaoService.salvarPontuacao({
+            idUsuario: usuario.id,
+            nomeUsuario: usuario.nome,
+            pontos: [...gameData.scores, score],
+            paises: [...gameData.countries, randomSeed.country],
+            distancias: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
+            })
+        }
+
         setGameData({
             scores: [...gameData.scores, score],
             finalScore: sumScore,
@@ -61,6 +73,8 @@ export const GoogleMap = () => {
             actualLng: location[1],
             distances: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
         })
+
+
         navigate('/results')
     }
 
