@@ -9,7 +9,7 @@ export const estilosCores = {
     '--light-color': '#7747d6',
     '--card-color': '#3b1585a6',
     '--data-color': '#260d5795',
-    '--button-color':'#22d57f'
+    '--button-color': '#22d57f'
 
 
 };
@@ -30,7 +30,7 @@ export const StyledContainer = styled.div`
     text-align: center;
     padding: 20px 0;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
     color: #fff;
     justify-content: flex-start;
     align-items: center;
@@ -39,7 +39,7 @@ export const StyledContainer = styled.div`
     overflow-y: auto;
     overflow-x: hidden;
 
-    #nextRound{
+    #nextRound,#finalRound{
         text-decoration: none;
         color: #fff;
         border: 1px solid #222;
@@ -50,8 +50,15 @@ export const StyledContainer = styled.div`
         font-size: 1.7rem;
         font-weight: bolder;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 20px;
             
+    }
+    &::before {
+        content: '';
+        display: block;
+        min-height: 40px;
+        width: 100%;
+        flex-shrink: 0;
     }
     &::after {
         content: '';
@@ -76,7 +83,9 @@ export const StyledResults = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-image: linear-gradient(rgba(74, 40, 153, 0.85), rgba(82, 43, 173, 0.85)), url(https://media.gettyimages.com/id/1385142384/pt/vetorial/outline-gradient-world-map-outline-background.jpg?s=612x612&w=0&k=20&c=EFkbBum2tFdQD5R29Om59UdVucWAgavTkJQmS2PgU-4=)
+    background-image: linear-gradient(rgba(74, 40, 153, 0.85), rgba(82, 43, 173, 0.85)), url(https://media.gettyimages.com/id/1385142384/pt/vetorial/outline-gradient-world-map-outline-background.jpg?s=612x612&w=0&k=20&c=EFkbBum2tFdQD5R29Om59UdVucWAgavTkJQmS2PgU-4=);
+    border-radius: 25px;
+    
 `;
 export const MapWrapper = styled.div`
     width: 90%;
@@ -98,6 +107,7 @@ export const StyledMapContainer = styled(MapContainer)`
 export const StyledRestCountries = styled.div`
     padding: 20px;
     display: grid;
+    font-size: 1.2rem;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
@@ -111,7 +121,7 @@ export const StyledRestCountries = styled.div`
 
 export const StyledFlag = styled.img`
     max-height: 300px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/5;
     width: 90%;
     grid-area: ${props => props.area};
     justify-self: center;

@@ -1,8 +1,11 @@
 import React from 'react'
-import { StyledFinalResult } from './style'
+import { StyledFinalResult, StyledScore, StyledText } from './style'
 
-export const FinalResult = ( { finalScore } ) => {
+export const FinalResult = ( { color,finalScore } ) => {
   return (
-    <StyledFinalResult>Resultado final: {finalScore}</StyledFinalResult>
+    <StyledFinalResult color={color}>
+      <StyledText>Pontuação final</StyledText>
+      <StyledScore>{finalScore}</StyledScore>
+    </StyledFinalResult>
   )
 }

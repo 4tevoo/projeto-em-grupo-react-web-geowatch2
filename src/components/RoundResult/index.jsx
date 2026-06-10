@@ -1,13 +1,19 @@
 import React from 'react'
-import { StyledDistance, StyledRoundResult } from './style'
+import { StyledDistance, StyledRoundResult, StyledScore, StyledText } from './style'
 
-export const RoundResult = ({score,distance}) => {
+export const RoundResult = ({ color, score, distance }) => {
   return (
     <>
-    <StyledRoundResult>Pontuação da rodada: {score}</StyledRoundResult>
-    <StyledDistance>Distância da localização: {distance}
-      <span> KM</span>
-    </StyledDistance>
+      <StyledRoundResult>
+        <StyledText>Pontuação da rodada </StyledText>
+        <StyledScore color={color}>{score}</StyledScore>
+      </StyledRoundResult>
+
+      <StyledRoundResult>
+        <StyledText>Distância da localização</StyledText>
+        <StyledText>{distance} KM</StyledText>
+      </StyledRoundResult>
     </>
+
   )
 }

@@ -1,5 +1,5 @@
 import { TileLayer, Marker, Polyline } from 'react-leaflet';
-import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard } from './style.jsx';
+import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores } from './style.jsx';
 import { useEffect, useState } from 'react';
 import { useResult } from '../../context/ResultContext.jsx';
 import axios from 'axios';
@@ -41,14 +41,27 @@ export const Results = () => {
             distances: []
         })
     }
+    function scoreColor(score) {
+        if (score >= 4000) return '#22d57f'
+        if (score >= 2000) return '#fff'
+        if (score >= 500) return '#e6b43c'
+        return '#b71813'
+    }
+    function finalScoreColor(score) {
+        if (score >= 20000) return '#22d57f'
+        if (score >= 10000) return estilosCores['--data-color'] 
+        if (score >= 2500) return '#e6b43c'
+        return '#b71813'
+    }
 
     return (
 
         <StyledContainer>
             <StyledCard>
                 <StyledResults>
-                    <RoundResult score={gameData.scores[gameData.round - 1]} distance={gameData.distances[gameData.round - 1]}></RoundResult>
-                    {gameData.round == 5 && <FinalResult finalScore={gameData.finalScore} ></FinalResult>}
+                     {gameData.round == 5 && <FinalResult color={finalScoreColor(gameData.finalScore)} finalScore={gameData.finalScore} ></FinalResult>}
+                    <RoundResult color={scoreColor(gameData.scores[gameData.round - 1])} score={gameData.scores[gameData.round - 1]} distance={gameData.distances[gameData.round - 1]}></RoundResult>
+                   
                 </StyledResults>
             </StyledCard>
             <MapWrapper>
@@ -77,7 +90,7 @@ export const Results = () => {
             </MapWrapper>
 
             {gameData.round <= 4 && <Link id='nextRound' to={'/geowatch2'}>Próxima rodada</Link>}
-            {gameData.round == 5 && <Link id='nextRound' to={'/ranking'} onClick={() => wipeMatch()}>Finalizar Partida</Link>}
+            {gameData.round == 5 && <Link id='finalRound' to={'/ranking'} onClick={() => wipeMatch()}>Finalizar Partida</Link>}
 
             {countryData && (
                 <StyledCard>
