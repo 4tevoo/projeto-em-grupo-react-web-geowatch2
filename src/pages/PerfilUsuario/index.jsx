@@ -1,10 +1,11 @@
 import { BodyUsuario } from "./BodyUsuario"
 import { HeaderUsuario } from "./HeaderUsuario"
-import { ContainerPerfil } from "./style"
+import { BotaoLogout, ContainerPerfil } from "./style"
 import { userService } from "../../services/usuariosService"
 import { useAuth } from "../../context/AuthContext"
 import { ModalUpdate } from "./ModalUpdate"
 import { useState } from "react"
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 export const Perfil = () =>{
 
@@ -29,7 +30,6 @@ export const Perfil = () =>{
         (<ContainerPerfil>
             <HeaderUsuario onExcluirClick={excluirPerfil} onEditarClick={abrirModal}/>
             <BodyUsuario/>
-            <button onClick={logout}> SAIR </button>
             <ModalUpdate abreModal={abreModal} fechaModal={fecharModal}/>
         </ContainerPerfil>) : 
         (<ContainerPerfil>
