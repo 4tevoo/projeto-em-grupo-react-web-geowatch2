@@ -1,5 +1,6 @@
 import { Marker, TileLayer, useMapEvents } from 'react-leaflet';
 import { StyledMapContainer, MapWrapper } from './style'
+import { blueMarker } from '../../../pages/Results/style';
 
 export const GameMap = ({ position, setPosition }) => {
 
@@ -21,7 +22,7 @@ export const GameMap = ({ position, setPosition }) => {
                     tileSize={512}
                     zoomOffset={-1}
                 />
-                {position && (<Marker position={position}></Marker>)}
+                {position && (<Marker position={position} icon={blueMarker}></Marker>)}
                 <MapClickHandler />
             </StyledMapContainer>
         </MapWrapper>
