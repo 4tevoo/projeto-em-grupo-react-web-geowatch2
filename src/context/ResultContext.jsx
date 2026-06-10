@@ -6,15 +6,14 @@ export const ResultContext = createContext();
 
 export const ResultProvider = ({ children }) => {
   const [gameData, setGameData] = useState({
-    score: 0,
-    finalScore: 0,
+    scores: [],
     round: 0,
-    country: "Brasil",
+    countries: [],
     guessLat: 0,
     guessLng: 0,
     actualLat: 0,
     actualLng: 0,
-    distance: 0
+    distances: []
   })
 
   return (
