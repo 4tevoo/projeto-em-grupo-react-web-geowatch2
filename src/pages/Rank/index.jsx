@@ -78,6 +78,24 @@ export default function RankingPage() {
     .sort((a, b) => (b.pontos ?? 0) - (a.pontos ?? 0))
     .slice(0, 3);
 
+  const top3RecordeIds = [...players]
+    .sort((a, b) => (b.recorde ?? 0) - (a.recorde ?? 0))
+    .slice(0, 3)
+    .map(p => p.id);
+
+  const getColorRank = (playerId, type) => {
+    if (type === 'pontos') {
+      if (top3[0]?.id === playerId) return 1;
+      if (top3[1]?.id === playerId) return 2;
+      if (top3[2]?.id === playerId) return 3;
+    } else if (type === 'recorde') {
+      if (top3RecordeIds[0] === playerId) return 1;
+      if (top3RecordeIds[1] === playerId) return 2;
+      if (top3RecordeIds[2] === playerId) return 3;
+    }
+    return null;
+  };
+
   return (
     <Wrapper>
       <GridBg />
@@ -119,7 +137,7 @@ export default function RankingPage() {
                         : <PodiumAvatar $rank={rank}>{getInitials(p.userName)}</PodiumAvatar>
                       }
                       <PodiumName>{p.userName?.split(' ')[0]}</PodiumName>
-                      <PodiumPoints>
+                      <PodiumPoints $rank={rank}>
                         {(p.pontos ?? 0).toLocaleString('pt-BR')} pts
                       </PodiumPoints>
                       <PodiumBase $rank={rank}>{rank}</PodiumBase>
@@ -152,32 +170,37 @@ export default function RankingPage() {
                 <ThCell>Recorde</ThCell>
               </TableHeader>
 
-              {players.map((p, idx) => (
-                <Row key={p.id} $delay={0.03 * idx}>
-                  <RankCell>
-                    {idx < 3
-                      ? <BadgeIcon>{BADGE_MAP[idx]}</BadgeIcon>
-                      : `${idx + 1}°`
-                    }
-                  </RankCell>
+              {players.map((p, idx) => {
+                const pontosRank = getColorRank(p.id, 'pontos');
+                const recordeRank = getColorRank(p.id, 'recorde');
+                
+                return (
+                  <Row key={p.id} $delay={0.03 * idx}>
+                    <RankCell>
+                      {idx < 3
+                        ? <BadgeIcon>{BADGE_MAP[idx]}</BadgeIcon>
+                        : `${idx + 1}°`
+                      }
+                    </RankCell>
 
-                  <PlayerInfo>
-                    {p.avatarURL
-                      ? <AvatarImg src={p.avatarURL} alt={p.userName} />
-                      : <Avatar>{getInitials(p.userName)}</Avatar>
-                    }
-                    <PlayerName>{p.userName}</PlayerName>
-                  </PlayerInfo>
+                    <PlayerInfo>
+                      {p.avatarURL
+                        ? <AvatarImg src={p.avatarURL} alt={p.userName} />
+                        : <Avatar>{getInitials(p.userName)}</Avatar>
+                      }
+                      <PlayerName>{p.userName}</PlayerName>
+                    </PlayerInfo>
 
-                  <StatCell $bold $accent>
-                    {(p.pontos ?? 0).toLocaleString('pt-BR')}
-                  </StatCell>
+                    <StatCell $rank={pontosRank}>
+                      {(p.pontos ?? 0).toLocaleString('pt-BR')}
+                    </StatCell>
 
-                  <StatCell className="hide-mobile">
-                    {p.recorde ?? '—'}
-                  </StatCell>
-                </Row>
-              ))}
+                    <StatCell className="hide-mobile" $rank={recordeRank}>
+                      {p.recorde ?? '—'}
+                    </StatCell>
+                  </Row>
+                );
+              })}
             </TableWrap>
           </>
         )}
