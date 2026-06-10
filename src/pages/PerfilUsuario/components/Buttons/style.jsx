@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    //background-color: ${props => props.corFundo || '#3a3a3a'};
     padding: 10px 20px;
     border-radius: 6px;
     font-family: "Montserrat";
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
