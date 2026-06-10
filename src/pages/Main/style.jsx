@@ -32,7 +32,6 @@ export const Bloco = styled.section`
         height: 100%;
         background-color: ${({ $bg }) => $bg || '#1a1a2e'};
         opacity: 0.50;
-        z-index: 0;
     }
 
     & > * {
