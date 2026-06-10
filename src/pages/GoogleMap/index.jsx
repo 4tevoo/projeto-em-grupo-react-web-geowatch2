@@ -36,30 +36,31 @@ export const GoogleMap = () => {
     function truncateToDecimals(number, digits) {
     const multiplier = Math.pow(10, digits);
     return Math.trunc(number * multiplier) / multiplier;
-}
+    }
 
     function getScore() {
         const score = Math.floor(5000 * Math.pow(Math.E, (-10*getDistance()/7500)))
-        let scoreSum = score;
+        let sumScore = score;
         let round = 0;
 
         if(gameData) {
-            scoreSum += gameData.finalScore
-            round++
+            round = gameData.round + 1
+            gameData.scores.forEach((s) => {
+                sumScore += s
+            })
         }
 
         setGameData({
-            score: score,
-            finalScore: scoreSum,
+            scores: [...gameData.scores, score],
+            finalScore: sumScore,
             round: round,
-            country: randomSeed.country,
+            countries: [...gameData.countries, randomSeed.country],
             guessLat: position[0],
             guessLng: position[1],
             actualLat: location[0],
             actualLng: location[1],
-            distance: truncateToDecimals(getDistance(),2)
+            distances: [...gameData.distances, truncateToDecimals(getDistance(), 2)]
         })
-
         navigate('/results')
     }
 
@@ -67,8 +68,6 @@ export const GoogleMap = () => {
 
     const streetViewURL = `https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
             &location=${location[0]},${location[1]}`
-    console.log(randomSeed)
-    
 
     return (
         <>
@@ -77,7 +76,7 @@ export const GoogleMap = () => {
             src={streetViewURL}
             >
             </GoogleView>
-            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()}/>
+            <GameHUD position={position} setPosition={setPosition} handleClick={() => getScore()} score={gameData.round}/>
         </>
     )
 }

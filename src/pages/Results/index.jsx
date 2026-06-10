@@ -18,25 +18,24 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${gameData.country}`)
+                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${gameData.countries[gameData.round - 1]}`)
                 setCountryData(response.data[0])
             } catch (error) {
                 console.log(error.message)
             }
-
-
         }
         countriesAPI()
+        console.log(gameData)
 
-    }, [gameData.country])
+    }, [gameData.countries, gameData.round, gameData])
 
     return (
 
         <StyledContainer>
             <StyledCard>
                 <StyledResults>
-                    <RoundResult score={gameData.score} distance={gameData.distance}></RoundResult>
-                    {gameData.round == 5 && <FinalResult score={gameData.finalScore} ></FinalResult>}
+                    <RoundResult score={gameData.scores[gameData.round - 1]} distance={gameData.distances[gameData.round - 1]}></RoundResult>
+                    {gameData.round == 5 && <FinalResult finalScore={gameData.finalScore} ></FinalResult>}
                 </StyledResults>
             </StyledCard>
             <MapWrapper>
