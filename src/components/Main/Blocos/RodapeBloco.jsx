@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { colors, RodapeWrapper, RodapeInfo, RodapeLabel, RodapeLista, ColunaFreq, FreqItem, FreqPergunta, FreqResposta } from "../../../pages/Main/style";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 export const freq = [
     {
@@ -23,6 +24,7 @@ export const freq = [
 
 export default function OitavoBloco() {
 
+    const botaoFuncao = useNavigate();
     const [pergunta, setPergunta] = useState(null);
 
     function toggleFreq(index) {
@@ -46,7 +48,11 @@ export default function OitavoBloco() {
                 <RodapeLabel>EXPLORAR</RodapeLabel>
                 <RodapeLista>
                     <li>Campeonato Serratec 2026.1</li>
-                    <li>Ranking</li>
+                    <li>
+                        <span onClick={() => botaoFuncao('/ranking')} style={{cursor: 'pointer'}}>
+                            Ranking
+                        </span>
+                    </li>
                     <li>Loja</li>
                     <li></li>
                 </RodapeLista>

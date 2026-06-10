@@ -15,11 +15,19 @@ export const ResultProvider = ({ children }) => {
     distances: []
   })
 
-  const [countryCode, setCountryCode] = useState('')
+  const [countryCode, setCountryCode] = useState("")
 
-  const [posicoesValidas, setPosicoesValidas] = useState(locais.filter((local) => 
-    countryCode === "" || local.country === countryCode
-  ))
+  const [posicoesValidas, setPosicoesValidas] = useState(locais)
+
+
+  useEffect(() => {
+    if (countryCode === "") {
+      setPosicoesValidas(locais);
+    } else {
+      const filtrados = locais.filter((local) => local.country === countryCode);
+      setPosicoesValidas(filtrados);
+    }
+  }, [countryCode]); 
   
   return (
     <ResultContext.Provider value={{ gameData, setGameData, posicoesValidas, setCountryCode }}>

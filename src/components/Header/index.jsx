@@ -6,11 +6,13 @@ import { useState } from "react";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import { useResult } from "../../context/ResultContext";
 
 export const Header = () =>{
     const {usuario, loading, logout} = useAuth();
     const [dropAberto, setDropAberto] = useState(false);
     const [sidebarAberta, setSidebarAberta] = useState(false);
+    const { setCountryCode } = useResult();
 
     return(
         <>
@@ -22,7 +24,7 @@ export const Header = () =>{
             <MenuHeader>
                 <Link to="/">Início</Link>
                 <Link to="/ranking">Ranking</Link>
-                <Link to="/geowatch2">Jogar</Link>
+                <Link to="/geowatch2" onClick={ () => setCountryCode("") }>Jogar</Link>
             </MenuHeader>
         
         {usuario && (    
