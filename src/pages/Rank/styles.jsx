@@ -246,7 +246,7 @@ export const TableWrap = styled.div`
 
 export const TableHeader = styled.div`
   display: grid;
-  grid-template-columns: 56px 1fr 130px 110px 110px;
+  grid-template-columns: 56px 1fr 130px 130px;
   padding: 12px 20px;
   background: rgba(74,35,153,0.15);
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -272,7 +272,7 @@ export const ThCell = styled.span`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: 56px 1fr 130px 110px 110px;
+  grid-template-columns: 56px 1fr 130px 130px;
   align-items: center;
   padding: 14px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -373,4 +373,25 @@ export const SortBtn = styled.button`
   letter-spacing: 0.04em;
 
   &:hover { border-color: rgba(74,35,153,0.6); color: ${COLORS.white}; }
+`;
+
+export const AvatarImg = styled.img`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+`;
+
+export const PodiumAvatarImg = styled.img`
+  width: ${({ $rank }) => $rank === 1 ? '72px' : '56px'};
+  height: ${({ $rank }) => $rank === 1 ? '72px' : '56px'};
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid ${({ $rank }) =>
+    $rank === 1 ? '#E6B43C' :
+    $rank === 2 ? '#a08cc0' :
+    '#B71813'
+  };
 `;

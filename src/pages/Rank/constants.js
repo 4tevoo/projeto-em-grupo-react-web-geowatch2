@@ -1,6 +1,5 @@
 export const SORT_OPTIONS = [
   { key: 'pontos',           label: 'Pontos' },
-  { key: 'partidas',         label: 'Partidas' },
   { key: 'recorde',          label: 'Recorde' },
 ];
 

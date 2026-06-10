@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { SORT_OPTIONS, BADGE_MAP, getInitials } from './constants.js';
-import { getRanking } from '../../services/rankingService';
+import { pontuacaoService } from '../../services/pontuacaoService';
 import {
   Wrapper, GridBg, GlowOrb, Content,
   PageHeader, Tag, Title, Subtitle,
   Center, Spinner, ErrorMsg, RetryBtn,
-  PodiumRow, PodiumCard, PodiumAvatar, PodiumCrown,
+  PodiumRow, PodiumCard, PodiumAvatar, PodiumAvatarImg, PodiumCrown,
   PodiumName, PodiumPoints, PodiumBase,
   FilterRow, FilterLabel, BtnGroup, SortBtn,
   TableWrap, TableHeader, ThCell,
   Row, RankCell, BadgeIcon, PlayerInfo,
-  Avatar, PlayerName, StatCell,
+  Avatar, AvatarImg, PlayerName, StatCell,
 } from './styles.jsx';
 
 export default function RankingPage() {
@@ -24,8 +24,38 @@ export default function RankingPage() {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await getRanking();
-      setRawPlayers(data.slice(0, 50));
+      const [{ data: partidas }, { data: usuarios }] = await Promise.all([
+        pontuacaoService.getRanking(),
+        pontuacaoService.getUsuarios(),
+      ]);
+
+      const pontosTratados = partidas.map(pt => {
+        const usuario = usuarios.find(u => u.id === pt.idUsuario);
+        const totalPontos = pt.pontos.reduce((acc, val) => acc + val, 0);
+        const melhorRodada = pt.pontos.length > 0 ? Math.max(...pt.pontos) : 0;
+        return {
+          ...pt,
+          userName:  usuario?.nome ?? pt.nomeUsuario,
+          avatarURL: usuario?.avatarURL ?? null,
+          pontos:    totalPontos,
+          recorde:   melhorRodada,
+        };
+      });
+
+      const semDuplicatas = Object.values(
+        pontosTratados.reduce((acc, p) => {
+          if (!acc[p.idUsuario]) {
+            acc[p.idUsuario] = p;
+          } else {
+            if (p.pontos > acc[p.idUsuario].pontos) {
+              acc[p.idUsuario] = p;
+            }
+          }
+          return acc;
+        }, {})
+      );
+
+      setRawPlayers(semDuplicatas.slice(0, 50));
     } catch (err) {
       setError('Não foi possível carregar o ranking. Tente novamente.');
       console.error(err);
@@ -36,7 +66,7 @@ export default function RankingPage() {
 
   useEffect(() => { fetchRanking(); }, []);
 
-useEffect(() => {
+  useEffect(() => {
     if (!rawPlayers.length) return;
     const sorted = [...rawPlayers]
       .sort((a, b) => (b[sortBy] ?? 0) - (a[sortBy] ?? 0))
@@ -44,7 +74,9 @@ useEffect(() => {
     setPlayers(sorted);
   }, [rawPlayers, sortBy]);
 
-  const top3 = players.slice(0, 3);
+  const top3 = [...players]
+    .sort((a, b) => (b.pontos ?? 0) - (a.pontos ?? 0))
+    .slice(0, 3);
 
   return (
     <Wrapper>
@@ -82,7 +114,10 @@ useEffect(() => {
                   return (
                     <PodiumCard key={p.id} $rank={rank} $delay={0.1 * i}>
                       {rank === 1 && <PodiumCrown>👑</PodiumCrown>}
-                      <PodiumAvatar $rank={rank}>{getInitials(p.userName)}</PodiumAvatar>
+                      {p.avatarURL
+                        ? <PodiumAvatarImg src={p.avatarURL} $rank={rank} alt={p.userName} />
+                        : <PodiumAvatar $rank={rank}>{getInitials(p.userName)}</PodiumAvatar>
+                      }
                       <PodiumName>{p.userName?.split(' ')[0]}</PodiumName>
                       <PodiumPoints>
                         {(p.pontos ?? 0).toLocaleString('pt-BR')} pts
@@ -115,7 +150,6 @@ useEffect(() => {
                 <ThCell>Jogador</ThCell>
                 <ThCell>Pontos</ThCell>
                 <ThCell>Recorde</ThCell>
-                <ThCell>Partidas</ThCell>
               </TableHeader>
 
               {players.map((p, idx) => (
@@ -128,7 +162,10 @@ useEffect(() => {
                   </RankCell>
 
                   <PlayerInfo>
-                    <Avatar>{getInitials(p.userName)}</Avatar>
+                    {p.avatarURL
+                      ? <AvatarImg src={p.avatarURL} alt={p.userName} />
+                      : <Avatar>{getInitials(p.userName)}</Avatar>
+                    }
                     <PlayerName>{p.userName}</PlayerName>
                   </PlayerInfo>
 
@@ -138,10 +175,6 @@ useEffect(() => {
 
                   <StatCell className="hide-mobile">
                     {p.recorde ?? '—'}
-                  </StatCell>
-
-                  <StatCell className="hide-mobile">
-                    {p.partidas ?? '—'}
                   </StatCell>
                 </Row>
               ))}
