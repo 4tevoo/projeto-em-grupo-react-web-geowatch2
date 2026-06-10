@@ -9,10 +9,10 @@ export const ResultProvider = ({ children }) => {
     scores: [],
     round: 0,
     countries: [],
-    guessLat: 0,
-    guessLng: 0,
-    actualLat: 0,
-    actualLng: 0,
+    guessLats: [],
+    guessLngs: [],
+    actualLats: [],
+    actualLngs: [],
     distances: []
   })
 

@@ -34,19 +34,21 @@ export const Results = () => {
             finalScore: 0,
             round: 0,
             countries: [],
-            guessLat: 0,
-            guessLng: 0,
-            actualLat: 0,
-            actualLng: 0,
+            guessLats: [],
+            guessLngs: [],
+            actualLats: [],
+            actualLngs: [],
             distances: []
         })
     }
+
     function scoreColor(score) {
         if (score >= 4000) return '#22d57f'
         if (score >= 2000) return '#fff'
         if (score >= 500) return '#e6b43c'
         return '#b71813'
     }
+
     function finalScoreColor(score) {
         if (score >= 20000) return '#22d57f'
         if (score >= 10000) return estilosCores['--data-color'] 
@@ -59,33 +61,55 @@ export const Results = () => {
         <StyledContainer>
             <StyledCard>
                 <StyledResults>
-                     {gameData.round == 5 && <FinalResult color={finalScoreColor(gameData.finalScore)} finalScore={gameData.finalScore} ></FinalResult>}
+                    {gameData.round == 5 && <FinalResult color={finalScoreColor(gameData.finalScore)} finalScore={gameData.finalScore} ></FinalResult>}
                     <RoundResult color={scoreColor(gameData.scores[gameData.round - 1])} score={gameData.scores[gameData.round - 1]} distance={gameData.distances[gameData.round - 1]}></RoundResult>
-                   
                 </StyledResults>
             </StyledCard>
             <MapWrapper>
-                <StyledMapContainer center={[gameData.actualLat, gameData.actualLng]} zoom={5}>
+                <StyledMapContainer center={[gameData.actualLats[gameData.round -1 ], gameData.actualLngs[gameData.round -1 ]]} zoom={5}>
                     <TileLayer
                         url={`https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
                         attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                         tileSize={512}
                         zoomOffset={-1}
                     />
-                    <Marker position={[gameData.guessLat, gameData.guessLng]}></Marker>
-                    <Marker position={[gameData.actualLat, gameData.actualLng]} icon={redMarker}></Marker>
-                    <Polyline
-                        positions={[
-                            [gameData.guessLat, gameData.guessLng],
-                            [gameData.actualLat, gameData.actualLng]
-                        ]}
-                        pathOptions={{
-                            color: '#444',
-                            weight: 3,
-                            dashArray: '10, 20',
-                            dashOffset: '0'
-                        }}
-                    />
+                    {gameData.round == 5 ? (
+                        gameData.guessLats.map((_, index) => (
+                            <>
+                                <Marker position={[gameData.guessLats[index], gameData.guessLngs[index]]}></Marker>
+                                <Marker position={[gameData.actualLats[index], gameData.actualLngs[index]]} icon={redMarker}></Marker>
+                                <Polyline
+                                    positions={[
+                                        [gameData.guessLats[index], gameData.guessLngs[index]],
+                                        [gameData.actualLats[index], gameData.actualLngs[index]]
+                                    ]}
+                                    pathOptions={{
+                                        color: '#444',
+                                        weight: 3,
+                                        dashArray: '10, 20',
+                                        dashOffset: '0'
+                                    }}
+                                />
+                            </>
+                        ))
+                    ) : (
+                        <>
+                            <Marker position={[gameData.guessLats[gameData.round - 1], gameData.guessLngs[gameData.round - 1]]}></Marker>
+                            <Marker position={[gameData.actualLats[gameData.round - 1], gameData.actualLngs[gameData.round - 1]]} icon={redMarker}></Marker>
+                            <Polyline
+                                positions={[
+                                    [gameData.guessLats[gameData.round - 1], gameData.guessLngs[gameData.round - 1]],
+                                    [gameData.actualLats[gameData.round - 1], gameData.actualLngs[gameData.round - 1]]
+                                ]}
+                                pathOptions={{
+                                    color: '#444',
+                                    weight: 3,
+                                    dashArray: '10, 20',
+                                    dashOffset: '0'
+                                }}
+                            />
+                        </>
+                    )}
                 </StyledMapContainer>
             </MapWrapper>
 
