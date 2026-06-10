@@ -54,3 +54,19 @@ export const HudContainer = styled.div`
         opacity: 1;
     }
 `;
+
+export const Points = styled.div`
+    z-index: 10;
+    margin-bottom: 10px; 
+    height: 5vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #00000080;
+    box-shadow: 0 0 16px #444;
+    border-radius: 25px;
+    color: #FEFFFE;
+    font-size: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold
+`;

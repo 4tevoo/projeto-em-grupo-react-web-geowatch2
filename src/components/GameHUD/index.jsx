@@ -1,11 +1,14 @@
 import { GameMap } from "./GameMap"
-import { ButtonHud, HudContainer } from "./style"
+import { ButtonHud, HudContainer, Points } from "./style"
 
-export const GameHUD = ({position, setPosition, handleClick, score}) => {
+export const GameHUD = ({position, setPosition, handleClick, sumScore}) => {
   return (
-    <HudContainer>
-      <GameMap position={position} setPosition={setPosition}/>
-      <ButtonHud onClick={handleClick} $isClicked={position ? true : false}>Guess</ButtonHud>
-    </HudContainer>
+    <>
+      <HudContainer>
+        {sumScore ? <Points>{sumScore}</Points> : <Points>0</Points>}
+        <GameMap position={position} setPosition={setPosition}/>
+        <ButtonHud onClick={handleClick} $isClicked={position ? true : false}>Guess</ButtonHud>
+      </HudContainer>
+    </>
   )
 }

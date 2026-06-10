@@ -1,4 +1,4 @@
-import { TileLayer, Marker, Polyline } from 'react-leaflet';
+import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores } from './style.jsx';
 import { useEffect, useState } from 'react';
 import { useResult } from '../../context/ResultContext.jsx';
@@ -76,8 +76,12 @@ export const Results = () => {
                     {gameData.round == 5 ? (
                         gameData.guessLats.map((_, index) => (
                             <>
-                                <Marker position={[gameData.guessLats[index], gameData.guessLngs[index]]}></Marker>
-                                <Marker position={[gameData.actualLats[index], gameData.actualLngs[index]]} icon={redMarker}></Marker>
+                                <Marker position={[gameData.guessLats[index], gameData.guessLngs[index]]}>
+                                    <Popup>Rodada: {index + 1}</Popup>
+                                </Marker>
+                                <Marker position={[gameData.actualLats[index], gameData.actualLngs[index]]} icon={redMarker}>
+                                    <Popup>Rodada: {index + 1}</Popup>
+                                </Marker>
                                 <Polyline
                                     positions={[
                                         [gameData.guessLats[index], gameData.guessLngs[index]],
