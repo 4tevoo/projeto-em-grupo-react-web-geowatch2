@@ -3,6 +3,12 @@ import Fundo from "../../../assets/continentes.png"
 import Logo from "../../../assets/logo.png"
 import { colors } from "../../../pages/Main/style";
 import CardLogin from "../CardLogin";
+import { DiAndroid } from "react-icons/di";
+import { FaApple } from "react-icons/fa";
+import { FaSteam } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalfAlt } from "react-icons/fa";
 
 export default function PrimeiroBloco() {
     return (
@@ -19,16 +25,23 @@ export default function PrimeiroBloco() {
 
                 <InfoPlataformas style={{marginTop: '0.8rem', gap: '1.5rem'}}>
                     <div>
-                        <span style={{fontSize: '1.3rem'}}>
-                            (colar svg ainda)
+                        <span style={{ fontSize: '1.7rem', color: colors.white, display: 'flex', gap: '0.3rem', marginBottom: '0.7rem', marginTop: '0.7rem'}}>
+                            <AiOutlineGlobal />
+                            <FaSteam />
+                            <FaApple />
+                            <DiAndroid />
                         </span>
                         <InfoTexto style={{fontSize: '0.9rem'}}>
                             Jogue na Web, Steam, iOS e Android
                         </InfoTexto>
                     </div>
                     <div>
-                        <span style={{fontSize:'1.3rem'}}>
-                            (colar svg ainda)
+                        <span style={{ fontSize: '1.7rem', color: colors.white, display: 'flex', gap: '0.3rem', marginBottom: '0.7rem', marginTop: '0.7rem'}}>
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStarHalfAlt />
                         </span>
                         <InfoTexto style={{fontSize: '0.9rem'}}>
                             Avaliação 4.5/5 na App Store

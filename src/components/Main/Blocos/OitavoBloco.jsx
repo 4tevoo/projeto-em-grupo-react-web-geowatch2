@@ -38,7 +38,7 @@ export default function OitavoBloco() {
                     R. Afrânio Melo Franco, 333 - 313 - Quitandinha,<br />
                     Petrópolis - RJ,<br />
                     25651-000<br /><br />
-                    © 2026 GeoWatch
+                    © 2026 GeoWatch 2
                 </RodapeInfo>
             </div>
 
