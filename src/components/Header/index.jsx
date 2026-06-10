@@ -73,7 +73,7 @@ export const Header = () =>{
             </SidebarHeader>)}
             
             <MobileNav>
-                <Link to="/main" onClick={() => setSidebarAberta(false)}>Início</Link>
+                <Link to="/" onClick={() => setSidebarAberta(false)}>Início</Link>
                 <Link to="/ranking" onClick={() => setSidebarAberta(false)}>Ranking</Link>
                 <Link to="/geowatch2" onClick={() => setSidebarAberta(false)}>Jogar</Link>
 
