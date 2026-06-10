@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header`
     font-family: "Montserrat";
 `
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
     height: 100%;
     overflow: hidden;
     display: flex;

@@ -15,12 +15,12 @@ export const Header = () =>{
     return(
         <>
         <HeaderContainer>
-            <Logo>
+            <Logo to="/">
                 <ImgLogo src={LogoImg}/>
             </Logo>
         
             <MenuHeader>
-                <Link to="/main">Início</Link>
+                <Link to="/">Início</Link>
                 <Link to="/ranking">Ranking</Link>
                 <Link to="/geowatch2">Jogar</Link>
             </MenuHeader>

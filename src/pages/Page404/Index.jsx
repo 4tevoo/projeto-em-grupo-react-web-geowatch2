@@ -1,5 +1,9 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 export const Page404 = () => {
     return (
-        <h1>404 NOT FOUND</h1>
+        <div className="App">
+            <DotLottieReact src="/Not_Found.json" autoplay loop />
+        </div>
     )
 }
