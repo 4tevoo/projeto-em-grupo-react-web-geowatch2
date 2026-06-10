@@ -1,83 +1,23 @@
 import { useState } from "react";
-import { colors } from "../../../pages/Main/style";
+import { colors, RodapeWrapper, RodapeInfo, RodapeLabel, RodapeLista, ColunaFreq, FreqItem, FreqPergunta, FreqResposta } from "../../../pages/Main/style";
 import styled from "styled-components";
-
-export const RodapeWrapper = styled.footer`
-    background-color: #0d0d0d;
-    color: ${colors.white};
-    padding: 3rem 5%;
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
-`;
-
-export const RodapeInfo = styled.p`
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    color: #aaaaaa;
-    line-height: 1.8;
-`;
-
-export const RodapeLabel = styled.span`
-    font-size: 0.85rem;
-    color: #aaaaaa;
-    letter-spacing: 1px;
-    font-weight: 700;
-`;
-
-export const RodapeLista = styled.ul`
-    list-style: none;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    color: ${colors.white};
-`;
-
-export const ColunaFreq = styled.div`
-    flex: 1;
-    min-width: 300px;
-`;
-
-export const FreqItem = styled.div`
-    border-bottom: 1px solid #333;
-    padding: 1rem 0;
-    cursor: pointer;
-`;
-
-export const FreqPergunta = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: ${colors.white};
-    font-weight: 600;
-    font-size: 0.95rem;
-`;
-
-export const FreqResposta = styled.p`
-    margin-top: 0.75rem;
-    color: #aaaaaa;
-    font-size: 0.9rem;
-    line-height: 1.6;
-`;
 
 export const freq = [
     {
-        pergunta: "O que é GeoWatch?",
-        resposta: "GeoWatch é um jogo de geografia em quem você é largado em algum lugar do mundo e sua missão é encontrar pistas e advinhar a sua localização no mapa."
+        pergunta: "O que é o GeoWatch 2?",
+        resposta: "GeoWatch 2 é um jogo de geografia em que você é largado em algum lugar do mundo e sua missão é encontrar pistas e advinhar a sua localização no mapa."
     },
     {
         pergunta: "Quem são os desenvolvedores deste jogo?",
         resposta: "Estêvão Viana Cunha, Gabriel Martins Chinelli Maia, Patrick Nunes Pires Melo de Souza, Mateus Tamaki Yoshisaki, Yuri Dos Santos Martins e Pedro Pinto Martins De Souza"
     },
     {
-        pergunta: "GeoWatch está disponível na App Store e Google Play?",
-        resposta: "Sim, o GeoWatch está disponível para iOS e Android, e sua conta também permite que você jogue no aplicativo."
+        pergunta: "Preciso ser bom em geografia para jogar?",
+        resposta: "Nem um pouco! Alguns jogadores reconhecem países pela vegetação, outros chutam baseado na cor do asfalto. Todo mundo começa em algum lugar."
     },
     {
-        pergunta: "Em quais idiomas o GeoWatch está disponível?",
-        resposta: "GeoWatch está disponível em múltiplos idiomas. Você pode escolher o idioma nas configurações da conta."
+        pergunta: "Posso jogar com meus amigos?",
+        resposta: "Claro! Crie desafios, compare pontuações e descubra qual de vocês realmente prestou atenção nas aulas de geografia."
     }
 ];
 
@@ -92,12 +32,12 @@ export default function OitavoBloco() {
     return (
         <RodapeWrapper>
             <div>
-                <strong style={{fontSize: '1.2rem'}}>GEOWATCH</strong>
+                <RodapeLabel style={{ fontSize: '1.2rem'}}>GEOWATCH 2</RodapeLabel>
                 <RodapeInfo>
-                    GeoWatch<br />
-                    Info1<br />
-                    Info2<br />
-                    Info3<br /><br />
+                    GeoWatch2 S.A.<br />
+                    R. Afrânio Melo Franco, 333 - 313 - Quitandinha,<br />
+                    Petrópolis - RJ,<br />
+                    25651-000<br /><br />
                     © 2026 GeoWatch
                 </RodapeInfo>
             </div>
@@ -105,10 +45,10 @@ export default function OitavoBloco() {
             <div>
                 <RodapeLabel>EXPLORAR</RodapeLabel>
                 <RodapeLista>
-                    <li>Campeonato Mundial 2026</li>
-                    <li>Empresa</li>
+                    <li>Campeonato Serratec 2026.1</li>
+                    <li>Sobre nós</li>
                     <li>Loja</li>
-                    <li>Cartões-presente</li>
+                    <li></li>
                 </RodapeLista>
             </div>
 
