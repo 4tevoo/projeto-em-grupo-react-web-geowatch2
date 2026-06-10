@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 import { Layout } from "../components/Layout/index.jsx";
 import { Page404 } from "../pages/Page404/Index.jsx";
-import { GoogleMap } from "../pages/GoogleMap/index.jsx";
+import { GoogleMap } from "../pages/Game/index.jsx";
 import { Results } from "../pages/Results/index.jsx";
 import { Login } from "../pages/Login/index.jsx";
 import { Cadastro } from "../pages/Cadastro/index.jsx"
