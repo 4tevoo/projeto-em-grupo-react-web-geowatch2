@@ -1,5 +1,5 @@
 import { TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
-import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores, StyledCongrats } from './style.jsx';
+import { StyledMapContainer, StyledContainer, StyledRestCountries, StyledResults, MapWrapper, StyledFlag, redMarker, StyledData, StyledCard, estilosCores, StyledCongrats, blueMarker } from './style.jsx';
 import { useEffect, useState } from 'react';
 import { useResult } from '../../context/ResultContext.jsx';
 import axios from 'axios';
@@ -79,7 +79,7 @@ export const Results = () => {
             <MapWrapper>
                 <StyledMapContainer center={[gameData.actualLats[gameData.round -1 ], gameData.actualLngs[gameData.round -1 ]]} zoom={5}>
                     <TileLayer 
-                        noWrap={true}
+                        
                         url={`https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
                         attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                         tileSize={512}
@@ -88,7 +88,7 @@ export const Results = () => {
                     {gameData.round == 5 ? (
                         gameData.guessLats.map((_, index) => (
                             <>
-                                <Marker position={[gameData.guessLats[index], gameData.guessLngs[index]]}>
+                                <Marker position={[gameData.guessLats[index], gameData.guessLngs[index]]} icon={blueMarker}>
                                     <Popup>Rodada: {index + 1}</Popup>
                                 </Marker>
                                 <Marker position={[gameData.actualLats[index], gameData.actualLngs[index]]} icon={redMarker}>
@@ -110,7 +110,7 @@ export const Results = () => {
                         ))
                     ) : (
                         <>
-                            <Marker position={[gameData.guessLats[gameData.round - 1], gameData.guessLngs[gameData.round - 1]]}></Marker>
+                            <Marker position={[gameData.guessLats[gameData.round - 1], gameData.guessLngs[gameData.round - 1]]} icon={blueMarker}></Marker>
                             <Marker position={[gameData.actualLats[gameData.round - 1], gameData.actualLngs[gameData.round - 1]]} icon={redMarker}></Marker>
                             <Polyline
                                 positions={[

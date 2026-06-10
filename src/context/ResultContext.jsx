@@ -15,7 +15,7 @@ export const ResultProvider = ({ children }) => {
     distances: []
   })
 
-  const [countryCode, setCountryCode] = useState("JP")
+  const [countryCode, setCountryCode] = useState('')
 
   const [posicoesValidas, setPosicoesValidas] = useState(locais.filter((local) => 
     countryCode === "" || local.country === countryCode
