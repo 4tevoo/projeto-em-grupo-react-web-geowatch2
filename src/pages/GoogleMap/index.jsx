@@ -87,9 +87,11 @@ export const GoogleMap = () => {
 
     return (
         <>
-            <div className="App">
-                <DotLottieReact src="/Loading.json" autoplay loop />
-            </div>
+            {isLoading && (
+                <div className="App">
+                    <DotLottieReact src="/Loading.json" autoplay loop />
+                </div>
+            )}
             <GoogleView
             loading="lazy"
             src={streetViewURL}
