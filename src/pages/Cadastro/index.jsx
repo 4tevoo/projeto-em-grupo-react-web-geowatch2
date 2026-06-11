@@ -60,9 +60,13 @@ export const Cadastro = () => {
                 <Title>Bem-vindo ao Geowatch 2!</Title>
                 <Subtitle>Crie sua conta gratuita!</Subtitle>
 
-                <Input type="text" placeholder="Nome Completo" onChange={(e) => setNome(e.target.value)} required />
-                <Input type="email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} required />
-                <Input type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)} required />
+                <div style={{  
+                    color: '#444', 
+                    fontSize: '13px' }}>*Jogo ainda em desenvolvimento, por favor não utilize seus dados reais. Exemplo de login nos campos</div>
+
+                <Input type="text" placeholder="Nome/NickName" onChange={(e) => setNome(e.target.value)} required />
+                <Input type="email" placeholder="SeuNome@ficticio.com" onChange={(e) => setEmail(e.target.value)} required />
+                <Input type="password" placeholder="Senha Ficticia" onChange={(e) => setSenha(e.target.value)} required />
 
                 <Button type="submit" disabled={loading}>
                     {loading ? "Cadastrando..." : "Cadastrar"}
