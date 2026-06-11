@@ -792,6 +792,7 @@ export const locais =
     "latitude": 28.4019697,
     "longitude": -80.6032997
   },
+  {
     "id": 133,
     "country": "PL",
     "latitude": 50.0544496,
