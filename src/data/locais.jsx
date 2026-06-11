@@ -743,5 +743,88 @@ export const locais =
     "country": "LK",
     "latitude": 7.724088,
     "longitude": 81.6982211  
+  },
+  {
+    "id": 125,
+    "country": "AI",
+    "latitude": 18.2322816,
+    "longitude": -63.0374482
+  },
+  {
+    "id": 126,
+    "country": "US",
+    "latitude": 36.0726295,
+    "longitude": -87.3895586
+  },
+  {
+    "id": 127,
+    "country": "US",
+    "latitude": 38.5039297,
+    "longitude": -90.3350481
+  },
+  {
+    "id": 128,
+    "country": "US", 
+    "latitude": 39.4752189,
+    "longitude": -76.6503303
+  },
+  {
+    "id": 129,
+    "country": "US",
+    "latitude": 46.2747211,
+    "longitude": -95.6305763
+  },
+  {
+    "id": 130,
+    "country": "US",
+    "latitude": 32.5137177,
+    "longitude": -81.7426749
+  },
+  {
+    "id": 131,
+    "country": "US",
+    "latitude": 32.3649959,
+    "longitude": -81.3078122
+  },
+  {
+    "id": 132,
+    "country": "US",
+    "latitude": 28.4019697,
+    "longitude": -80.6032997
+  },
+    "id": 133,
+    "country": "PL",
+    "latitude": 50.0544496,
+    "longitude": 19.9561013
+  },
+  {
+    "id": 134,
+    "country": "JP",
+    "latitude": 39.6949574,
+    "longitude": 141.1516706
+  },
+  {
+    "id": 135,
+    "country": "JP",
+    "latitude": 34.9531257,
+    "longitude": 136.9677837
+  },
+  {
+    "id": 136,
+    "country": "EG",
+    "latitude": 30.0438471,
+    "longitude": 31.2303996
+  },
+  {
+    "id": 137,
+    "country": "IT",
+    "latitude": 40.8299488,
+    "longitude": 14.2468642
+  },
+  {
+    "id": 138,
+    "country": "IT",
+    "latitude": 41.8900709,
+    "longitude": 12.4927699
   }
 ]
