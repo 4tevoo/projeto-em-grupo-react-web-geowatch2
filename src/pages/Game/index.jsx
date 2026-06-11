@@ -10,7 +10,7 @@ import { useResult } from '../../context/ResultContext.jsx';
 
 export const GoogleMap = () => {
     
-    const { setGameData, gameData, posicoesValidas, countryCode } = useResult()
+    const { setGameData, gameData, posicoesValidas, countryCode, usados, setUsados } = useResult()
     const [randomSeed, setRandomSeed] = useState(getRandomSeed)
     const [location, setLocation] = useState([randomSeed.latitude, randomSeed.longitude]);
     const [position, setPosition] = useState()
@@ -25,8 +25,14 @@ export const GoogleMap = () => {
     }, [])
 
     function getRandomSeed() {
-        const random = posicoesValidas[Math.floor(Math.random() * (posicoesValidas.length - 1))]
-        return random
+    const disponiveis = posicoesValidas.filter(local => !usados.includes(local.id))
+    
+    const pool = disponiveis.length > 0 ? disponiveis : posicoesValidas
+    
+    const random = pool[Math.floor(Math.random() * pool.length)]
+
+    setUsados(prev => [...prev, random.id])
+    return random
     }
 
     function getScale() {
@@ -69,6 +75,7 @@ export const GoogleMap = () => {
     }
 
     function wipeMatch() {
+        setUsados([])
         setGameData({
             scores: [],
             finalScore: 0,
