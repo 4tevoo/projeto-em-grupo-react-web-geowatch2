@@ -20,22 +20,16 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                // Pegamos a URL original e passamos por dentro do corsproxy.io
-                const countryCode = gameData.countries[gameData.round - 1];
-                const targetUrl = `https://restcountries.com/v3.1/alpha/${countryCode}`;
-                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
-                const response = await axios.get(proxyUrl);
-
-                setCountryData(response.data[0]);
-                console.log("Deu certo!", response.status);
-
+                const response = await axios.get(`https://api.restcountries.com/countries/v5/codes.alpha_2/${gameData.countries[gameData.round - 1]}`, {
+                    headers: {
+                        'Authorization': `Bearer ${import.meta.env.VITE_REST_COUNTRIES_KEY}`
+                    }
+                })
+                console.log(response.data.data.objects[0])
+                setCountryData(response.data.data.objects[0])
             } catch (error) {
                 console.log(error.message)
-                console.log(response.status)
-                console.log("Erro na requisição:", error.message);
             }
-
         }
         countriesAPI()
 
@@ -146,12 +140,14 @@ export const Results = () => {
             {countryData && (
                 <StyledCard>
                     <StyledRestCountries>
-                        <StyledFlag area={"flag"} src={countryData.flags.svg} />
-                        <StyledFlag area={'coat'} src={countryData.coatOfArms.svg} />
-                        <StyledData area={'name'}><span>Nome: </span>{countryData.translations.por.common}</StyledData>
-                        <StyledData area={'capital'}><span>Capital: </span>{countryData.capital[0]}</StyledData>
-                        <StyledData area={'language'}><span>Língua: </span>{Object.values(countryData.languages).join(', ')}</StyledData>
-                        <StyledData area={'population'}><span>População: </span>{countryData.population.toLocaleString('pt-BR')}</StyledData>
+                        <StyledFlag area={"flag"} src={countryData.flag.url_svg} />
+                        <StyledData area={'name'}><span>Nome: </span>{countryData.names.translations.por.common}</StyledData>
+                        <StyledData area={'capital'}><span>Capital: </span>{countryData.capitals[0].name}</StyledData>
+                        <StyledData area={'language'}>
+                            <span>Língua: </span>
+                            {Object.values(countryData?.languages || {}).map(lang => lang.name).join(' - ')}
+                        </StyledData>
+                        <StyledData area={'population'}><span>População: </span>{countryData.population}</StyledData>
                         <StyledData area={'region'}><span>Região: </span>{countryData.region}</StyledData>
                         <StyledData area={'subregion'}><span>Sub região: </span>{countryData.subregion}</StyledData>
                     </StyledRestCountries>

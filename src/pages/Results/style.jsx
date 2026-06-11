@@ -127,7 +127,7 @@ export const StyledRestCountries = styled.div`
     gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-    'flag coat'
+    'flag flag'
     'name capital'
     'language population'
     'region subregion';
@@ -137,7 +137,7 @@ export const StyledRestCountries = styled.div`
 
 export const StyledFlag = styled.img`
     max-height: 300px;
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     width: 90%;
     grid-area: ${props => props.area};
     justify-self: center;
