@@ -51,7 +51,6 @@ export const PartidaProvider = ({ children }) => {
     };
 
     const elo = calcularElo();
-    console.log(mediaPrecisao, elo);
 
     return (
         <PartidaContext.Provider value={{ 
