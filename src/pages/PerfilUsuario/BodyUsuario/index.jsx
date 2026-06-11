@@ -1,13 +1,31 @@
-import { BodyUsuarioDadosCad, BodyUsuarioDadosGame, BodyUsuarioStyle, InfoCad, UserEmail, InfosGame, Label} from "./style"
+import { BodyUsuarioDadosCad, BodyUsuarioDadosGame, BodyUsuarioStyle, InfoCad, 
+    UserEmail, InfosGame, Label, EmailTexto, 
+    CardInfosGame, LabelInfosGame, ListHistorico, 
+    ContainerLabelList, HistoricoItem, ColData, 
+    ColOpcao, ColPontos, IconList, ContainerHistorico} from "./style"
 import { useAuth } from "../../../context/AuthContext"
+import { pontuacaoService } from "../../../services/pontuacaoService";
+import { useEffect, useState } from "react";
+import { TbCalendarCheck } from "react-icons/tb";
+import { GoTrophy } from "react-icons/go";
+import { PiTargetLight } from "react-icons/pi";
+import { LuMapPinCheck } from "react-icons/lu";
+import { FaMapPin } from "react-icons/fa";
+import { usePartidas } from "../../../context/PartidasContext";
+
+
 export const BodyUsuario = () => {
     const { usuario, loading } = useAuth();
+    const {dadosPartidas, loadingPartidas, recorde, maiorPrecisao} = usePartidas();
+
+   
+    
     if (loading) {
         return <p>Carregando dados do jogador...</p>;
     }
     return(
     <BodyUsuarioStyle>
-        <BodyUsuarioDadosCad>
+        {/* <BodyUsuarioDadosCad>
             <h2>Dados Cadastrais</h2>
             <UserEmail> 
                 <InfoCad>
@@ -16,18 +34,53 @@ export const BodyUsuario = () => {
                 </InfoCad>
                 <InfoCad>
                     <Label>Email</Label>
-                    {usuario.email}
+                    <EmailTexto>{usuario.email}</EmailTexto>
                 </InfoCad>
             </UserEmail>   
-        </BodyUsuarioDadosCad>
+        </BodyUsuarioDadosCad> */}
         <BodyUsuarioDadosGame>
-            <h2>Painel do Jogador</h2>
+            <h1>PAINEL DO JOGADOR</h1>
             <InfosGame>
-                <InfoCad>Recorde</InfoCad>
-                <InfoCad>Partidas Jogadas</InfoCad>
-                <InfoCad>Maior precisão</InfoCad>
+                <CardInfosGame>
+                    <GoTrophy size={50}/>
+                    <div><LabelInfosGame>Recorde</LabelInfosGame>
+                    <p>{recorde}</p></div>
+                </CardInfosGame>
+                <CardInfosGame>
+                    <LuMapPinCheck size={55}/>
+                    <div><LabelInfosGame>Partidas Jogadas</LabelInfosGame>
+                    <p>{dadosPartidas.length}</p></div>
+                </CardInfosGame>
+                <CardInfosGame>
+                    <PiTargetLight size={60}/>
+                    <div><LabelInfosGame>Maior Precisão</LabelInfosGame>
+                    <p>{maiorPrecisao}</p></div>
+                </CardInfosGame>
+                
             </InfosGame>
-            <InfoCad>Histórico das últimas partidas</InfoCad>
+            
+            <ContainerHistorico>
+                <h1>Histórico de partidas</h1>
+                <ListHistorico>
+                    <ContainerLabelList>
+                        <ColData>Data</ColData>
+                        <ColOpcao>Opção</ColOpcao>
+                        <ColPontos>Pontos</ColPontos>
+                    </ContainerLabelList>
+                    {dadosPartidas.map((partida) => {
+                        return(<HistoricoItem key={partida.id}>
+                            <ColData>{partida.data}</ColData>
+                            <ColOpcao>{partida.opcao}</ColOpcao>
+                            <ColPontos>{partida.pontos.reduce(
+                                (acumulador, valorAtual) =>{
+                                    return acumulador + valorAtual;
+                                }, 0
+                            )}</ColPontos>
+                        </HistoricoItem>
+                        );
+                    })}
+                </ListHistorico>
+            </ContainerHistorico>
         </BodyUsuarioDadosGame>
     </BodyUsuarioStyle>
 )

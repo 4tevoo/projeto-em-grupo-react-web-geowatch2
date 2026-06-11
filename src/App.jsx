@@ -4,13 +4,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routers } from "./routes/Routers.jsx";
 import { AuthProvider } from './context/AuthContext';
+import { PartidaProvider } from './context/PartidasContext.jsx';
 
 function App() {
   return (
     <AuthProvider>
-      <GlobalStyle />
-      <Routers />
-      <ToastContainer position="top-right" autoClose={3000} />
+      <PartidaProvider>
+        <GlobalStyle />
+        <Routers />
+        <ToastContainer position="top-right" autoClose={3000} />
+      </PartidaProvider>
     </AuthProvider>
   );
 }
