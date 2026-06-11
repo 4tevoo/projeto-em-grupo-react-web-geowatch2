@@ -97,7 +97,7 @@ export const Title = styled.h1`
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.3;
   background: linear-gradient(135deg, ${COLORS.white} 30%, ${COLORS.green} 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -208,7 +208,7 @@ export const PodiumPoints = styled.div`
   font-size: 12px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  
+
   ${({ $rank }) => $rank === 1 && css`color: ${COLORS.gold};`}
   ${({ $rank }) => $rank === 2 && css`color: ${COLORS.silver};`}
   ${({ $rank }) => $rank === 3 && css`color: ${COLORS.bronze};`}
@@ -272,7 +272,9 @@ export const ThCell = styled.span`
   &:nth-child(n+3) { text-align: right; }
 
   @media (max-width: 600px) {
-    &:nth-child(4), &:nth-child(5) { display: none; }
+    &:nth-child(4) { display: none; }
+    &.hide-mobile  { display: none; }
+    &.show-mobile  { display: block; text-align: right; }
   }
 `;
 
@@ -346,6 +348,7 @@ export const StatCell = styled.div`
 
   @media (max-width: 600px) {
     &.hide-mobile { display: none; }
+    &.show-mobile { display: block; }
   }
 `;
 
