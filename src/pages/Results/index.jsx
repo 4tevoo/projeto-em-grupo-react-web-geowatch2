@@ -20,14 +20,22 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                const response = await axios.get(`/api-countries/alpha/${gameData.countries[gameData.round - 1]}`)
-                setCountryData(response.data[0])
-                console.log(response.status)
-                console.log(response.data[0])
+                // Pegamos a URL original e passamos por dentro do corsproxy.io
+                const countryCode = gameData.countries[gameData.round - 1];
+                const targetUrl = `https://restcountries.com/v3.1/alpha/${countryCode}`;
+                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+
+                const response = await axios.get(proxyUrl);
+
+                setCountryData(response.data[0]);
+                console.log("Deu certo!", response.status);
+
             } catch (error) {
                 console.log(error.message)
                 console.log(response.status)
+                console.log("Erro na requisição:", error.message);
             }
+
         }
         countriesAPI()
 
