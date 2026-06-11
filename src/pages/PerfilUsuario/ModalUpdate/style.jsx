@@ -21,8 +21,22 @@ export const ModalContainer = styled.div`
     width: 600px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     color: #ffffff;
+    position: relative;
 `
-
+export const BotaoFechar = styled.button`
+    background-color: transparent;
+    border: none;
+    color: #22D57F;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+`
 export const BotoesAbaContainer = styled.div`
     display: flex;
     gap: 10px;

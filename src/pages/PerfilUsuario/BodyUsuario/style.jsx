@@ -14,7 +14,8 @@ export const BodyUsuarioStyle = styled.div`
     gap: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     @media (min-width: 768px) {
-        width: 60%; 
+        width: 1020px; 
+        
         flex-direction: row; 
         padding: 24px;
         margin-bottom: 50px;
@@ -168,6 +169,7 @@ export const ColPontos = styled.span`
 export const IconList = styled.div`
     position: absolute;
     left: 1.5%;
+    
 `
 
 export const HistoricoItem = styled.li`

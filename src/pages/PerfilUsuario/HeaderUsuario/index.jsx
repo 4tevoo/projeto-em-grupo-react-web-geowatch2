@@ -1,5 +1,5 @@
 import {ButtonEditar, ButtonExcluir  } from "../components/Buttons/style"
-import { AvatarHeaderUsuario, HeaderUsuarioStyle, InfosHeader, ButtonsHeader, ContainerElo} from "./style"
+import { AvatarHeaderUsuario, HeaderUsuarioStyle, InfosHeader, ButtonsHeader, ContainerElo, DataHeader} from "./style"
 import { useAuth } from "../../../context/AuthContext";
 import Bronze from "../../../assets/bronze.png"
 import Prata from "../../../assets/prata.png"
@@ -11,6 +11,12 @@ export const HeaderUsuario = ({onEditarClick, onExcluirClick}) => {
     const{ usuario, loading } = useAuth();
     const { elo } = usePartidas();
 
+    const formatarDataBR = (dataString) => {
+        if (!dataString) return "--/--/----";
+        const data = new Date(dataString);
+        return new Intl.DateTimeFormat('pt-BR').format(data);
+    };
+    
     if (loading) {
         return <p>Carregando dados do jogador...</p>;
     }
@@ -24,7 +30,7 @@ export const HeaderUsuario = ({onEditarClick, onExcluirClick}) => {
                 />
                 <div>
                 <h1>{usuario.nome}</h1>
-                <p>titulo</p>
+                <DataHeader>Explorando desde: {formatarDataBR(usuario.dataCadastro)}</DataHeader>
                 </div>
                 <ContainerElo>
                     {elo === "Bronze" && <img src={Bronze}/>}
