@@ -134,6 +134,7 @@ export const ColPontos = styled.span`
 export const IconList = styled.div`
     position: absolute;
     left: 1.5%;
+    top: 3%;
     
 `
 

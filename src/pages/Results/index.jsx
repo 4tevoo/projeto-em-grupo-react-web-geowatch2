@@ -20,7 +20,6 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                // Pegamos a URL original e passamos por dentro do corsproxy.io
                 const countryCode = gameData.countries[gameData.round - 1];
                 const targetUrl = `https://restcountries.com/v3.1/alpha/${countryCode}`;
                 const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
