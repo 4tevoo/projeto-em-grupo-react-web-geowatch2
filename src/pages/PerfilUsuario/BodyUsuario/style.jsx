@@ -120,9 +120,9 @@ export const ColData = styled.span`
 export const ColOpcao = styled.span`
     width: 50%;
     text-align: center;
-    display: none;
+
     @media (min-width: 768px){
-    display: block;
+        display: block;
     }
 `
 
@@ -135,7 +135,10 @@ export const IconList = styled.div`
     position: absolute;
     left: 1.5%;
     top: 3%;
-    
+    display: none;
+    @media(min-width: 768px) {
+        display: block;
+    }
 `
 
 export const HistoricoItem = styled.li`
