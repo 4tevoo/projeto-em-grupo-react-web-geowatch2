@@ -5,5 +5,6 @@ export const pontuacaoService = {
   listarRanking: () => api.get('/partidas'),
   listarPorUsuario: (idUsuario) => api.get(`/partidas?idUsuario=${idUsuario}`),
   getRanking: () => api.get('/partidas?limit=50&sortBy=pontos&order=desc'),
-  getUsuarios: () => api.get('/usuarios')
+  getUsuarios: () => api.get('/usuarios'),
+  deletar: (id) => api.delete(`/partidas/${id}`)
 };

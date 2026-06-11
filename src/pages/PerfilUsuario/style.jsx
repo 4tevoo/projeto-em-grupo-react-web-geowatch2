@@ -8,9 +8,9 @@ export const ContainerPerfil = styled.div`
     gap: 40px;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     font-family: "Montserrat";
+    overflow-y: auto;
 `
 
 export const BotaoLogout = styled.button`

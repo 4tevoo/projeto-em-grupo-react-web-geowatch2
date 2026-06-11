@@ -16,7 +16,7 @@ export default function SegundoBloco() {
 
     return (
         <Bloco $bg={colors.yellow} $img={FundoRj}>
-            <div>
+            <div style={{ width: '100%' }}>
                 <BlocoTitulo>
                     ADVINHE E DESCUBRA
                 </BlocoTitulo>

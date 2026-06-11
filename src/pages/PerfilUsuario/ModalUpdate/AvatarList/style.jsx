@@ -7,7 +7,7 @@ export const AvataresContainer = styled.div`
     gap: 20px;
     padding: 10px;
     justify-content: center;
-    max-height: 400px;
+    max-height: 200px;
     overflow-y: auto;
     overflow-x: auto;
 
@@ -28,11 +28,14 @@ export const AvataresContainer = styled.div`
     &::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.35); 
     }
+    @media (min-width: 768px) {
+        max-height: 400px;
+    }
 `
 
 export const AvatarCard = styled.img`
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     padding: 4px;
@@ -46,5 +49,9 @@ export const AvatarCard = styled.img`
     &:hover {
         opacity: 1;
         transform: scale(1.05);
+    }
+    @media (min-width: 768px) {
+        width: 100px;
+        height: 100px;
     }
 `;

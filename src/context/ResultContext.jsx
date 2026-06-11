@@ -15,12 +15,15 @@ export const ResultProvider = ({ children }) => {
     distances: []
   })
 
+  const[usados, setUsados] = useState([])
+
   const [countryCode, setCountryCode] = useState("")
 
   const [posicoesValidas, setPosicoesValidas] = useState(locais)
 
 
   useEffect(() => {
+    setUsados([])
     if (countryCode === "") {
       setPosicoesValidas(locais);
     } else {
@@ -30,7 +33,7 @@ export const ResultProvider = ({ children }) => {
   }, [countryCode]); 
   
   return (
-    <ResultContext.Provider value={{ gameData, setGameData, posicoesValidas, setCountryCode }}>
+    <ResultContext.Provider value={{ gameData, setGameData, posicoesValidas, setCountryCode, countryCode, usados, setUsados }}>
       {children}
     </ResultContext.Provider>
   );

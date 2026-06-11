@@ -20,19 +20,29 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${gameData.countries[gameData.round - 1]}`)
-                setCountryData(response.data[0])
+                const countryCode = gameData.countries[gameData.round - 1];
+                const targetUrl = `https://restcountries.com/v3.1/alpha/${countryCode}`;
+                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+
+                const response = await axios.get(proxyUrl);
+
+                setCountryData(response.data[0]);
+                console.log("Deu certo!", response.status);
+
             } catch (error) {
                 console.log(error.message)
+                console.log(response.status)
+                console.log("Erro na requisição:", error.message);
             }
+
         }
         countriesAPI()
 
-        if(gameData.scores[gameData.round - 1] === 5000) {
+        if (gameData.scores[gameData.round - 1] === 5000) {
             setCongrats(true);
-            setTimeout(()=>{
+            setTimeout(() => {
                 setCongrats(false)
-            },3500)
+            }, 3500)
         }
 
     }, [gameData.countries, gameData.round])
@@ -60,7 +70,7 @@ export const Results = () => {
 
     function finalScoreColor(score) {
         if (score >= 20000) return '#22d57f'
-        if (score >= 10000) return estilosCores['--data-color'] 
+        if (score >= 10000) return estilosCores['--data-color']
         if (score >= 2500) return '#e6b43c'
         return '#b71813'
     }
@@ -77,9 +87,9 @@ export const Results = () => {
                 </StyledResults>
             </StyledCard>
             <MapWrapper>
-                <StyledMapContainer center={[gameData.actualLats[gameData.round -1 ], gameData.actualLngs[gameData.round -1 ]]} zoom={5}>
-                    <TileLayer 
-                        
+                <StyledMapContainer center={[gameData.actualLats[gameData.round - 1], gameData.actualLngs[gameData.round - 1]]} zoom={5}>
+                    <TileLayer
+
                         url={`https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`}
                         attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                         tileSize={512}

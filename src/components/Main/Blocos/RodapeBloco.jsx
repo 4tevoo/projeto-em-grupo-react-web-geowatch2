@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { colors, RodapeWrapper, RodapeInfo, RodapeLabel, RodapeLista, ColunaFreq, FreqItem, FreqPergunta, FreqResposta } from "../../../pages/Main/style";
-import styled from "styled-components";
 import { useNavigate } from "react-router";
 
 export const freq = [
@@ -54,7 +53,6 @@ export default function OitavoBloco() {
                         </span>
                     </li>
                     <li>Loja</li>
-                    <li></li>
                 </RodapeLista>
             </div>
 

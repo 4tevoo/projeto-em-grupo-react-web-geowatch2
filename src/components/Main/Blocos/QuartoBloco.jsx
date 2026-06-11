@@ -16,7 +16,7 @@ export default function QuartoBloco() {
 
     return (
         <Bloco $bg={colors.grey} $img={City}>
-            <div>
+            <div style={{ width: '100%' }}>
                 <BlocoTitulo>
                     VOLTA AO MUNDO
                 </BlocoTitulo>

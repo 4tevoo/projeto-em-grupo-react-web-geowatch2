@@ -6,32 +6,43 @@ export const HeaderUsuarioStyle = styled.div`
     url('https://media.gettyimages.com/id/1385142384/pt/vetorial/outline-gradient-world-map-outline-background.jpg?s=612x612&w=0&k=20&c=EFkbBum2tFdQD5R29Om59UdVucWAgavTkJQmS2PgU-4=');
     border-radius: 10px;
     height: auto;
-    width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #FFFFFF;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    margin-top: 70px;
+    margin-top: 800px;
     gap: 20px;
     
     
     @media (min-width: 768px) {
-        width: 60%; /* Desktop: Volta para o tamanho original */
+        min-width: 1020px;
+        max-width: 1100px;
         height: 80px;
-        flex-direction: row; /* Lado a lado no computador */
+        flex-direction: row;
         padding: 20px 24px;
-        margin-top: 0;
+        margin-top: 150px;
+        justify-content: space-between;
     }
+`
+
+export const DataHeader = styled.p`
+    opacity: 0.5;
+    font-style: italic;
 `
 export const InfosHeader = styled.div`
     display: flex;
     gap: 15px;
     align-items: center;
     height: 100%;
+    flex-direction: column;
+
+     @media (min-width: 768px){
+     flex-direction: row;
+     }
+
 `
 export const AvatarHeaderUsuario = styled.img`
     border-radius: 50%;
@@ -51,5 +62,15 @@ export const ButtonsHeader = styled.div`
     @media (min-width: 768px) {
         padding-right: 16px;
         gap: 12px;
+    }
+`
+
+export const ContainerElo = styled.div`
+    display: flex;
+    justify-content: center;
+    img{
+        width: 70px;
+        height: 90px;
+        self-align: center;
     }
 `
