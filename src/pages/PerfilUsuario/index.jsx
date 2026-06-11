@@ -33,7 +33,7 @@ export const Perfil = () =>{
             alert("Erro ao excluir a conta!")
             }
         }
-    };
+    };  
 
     return(
         usuario ?

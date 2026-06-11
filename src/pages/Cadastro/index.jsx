@@ -42,7 +42,7 @@ export const Cadastro = () => {
                 token: "",
                 inativo: false,
                 dataCadastro: new Date().toISOString(),
-                avatarURL: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                avatarURL: `https://api.dicebear.com/7.x/adventurer/svg?seed=${nome}`
             };
             await userService.cadastrar(novoUsuario);
             toast.success("Conta criada com sucesso!");
