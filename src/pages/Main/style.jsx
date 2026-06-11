@@ -14,9 +14,12 @@ export const colors = {
 export const Bloco = styled.section`
     min-height: 95vh;
     display: flex;
-    align-items: center;
-    padding: 0 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4rem 6%;
     position: relative;
+    gap: 2rem;
 
     background-image: ${({ $img }) => $img ? `url(${$img})` : 'none'};
     background-size: cover;
@@ -38,25 +41,45 @@ export const Bloco = styled.section`
         position: relative;
         z-index: 1;
     }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 5%;
+        min-height: 95vh;
+    }
 `;
 
 export const BlocoTitulo = styled.h2`
     font-family: 'Poppins', sans-serif;
-    font-size: 5rem;
+    font-size: 2rem;
     font-style: italic;
     font-weight: 900;
     color: ${colors.white};
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
+    @media (min-width: 480px) {
+        font-size: 2.8rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 5rem;
+    }
 `;
 
 export const BlocoTexto = styled.p`
     margin-bottom: 1rem;
-    max-width: 500px;
+    width: 100%;
     color: ${colors.white};
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.6;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
+    @media (min-width: 768px) {
+        font-size: 1.2rem;
+        max-width: 500px;
+    }
 `;
 
 export const BlocoBotao = styled.button`
@@ -87,15 +110,24 @@ export const LogoImg = styled.img`
 
 export const TituloUm = styled.h1`
     font-family: 'Poppins', sans-serif;
-    font-size: 5rem;
+    font-size: 2.2rem;
     font-style: italic;
     font-weight: 1000;
     color: ${colors.white};
     text-transform: uppercase;
     line-height: 1;
-    margin-top: -1rem;
+    margin-top: 0;
     margin-bottom: 1.7rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+
+    @media (min-width: 480px) {
+        font-size: 2.8rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 5rem;
+        margin-top: -1rem;
+    }
 `;
 
 export const InfoPlataformas = styled.div`
@@ -115,10 +147,17 @@ export const InfoTexto = styled.p`
 
 export const RodapeWrapper = styled.footer`
     background-color: ${colors.black};
-    padding: 3rem 5%;
+    padding: 2.5rem 6%;
     display: flex;
-    gap: 4rem;
+    flex-direction: column;
+    gap: 2rem;
     flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 3rem 5%;
+    }
 `;
 
 export const RodapeInfo = styled.p`
@@ -149,8 +188,12 @@ export const RodapeLista = styled.ul`
 `;
 
 export const ColunaFreq = styled.div`
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        flex: 1;
+        min-width: 300px;
+    }
 `;
 
 export const FreqItem = styled.div`
@@ -179,18 +222,28 @@ export const FreqResposta = styled.p`
 
 export const BotaoJogar = styled.button`
     margin-top: 1.5rem;
-    padding: 0.7rem 1.8rem;
+    padding: 0.7rem 1.4rem;
     border: 3px solid ${colors.white};
     background: ${colors.red};
     color: ${colors.white};
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.1rem;
     border-radius: 999px;
     cursor: pointer;
 
     &:hover {
         background: ${colors.white};
         color: ${colors.red};
+    }
+
+    @media (min-width: 480px) {
+        font-size: 1.3rem;
+        width: auto;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 2rem;
+        padding: 0.7rem 1.8rem;
     }
 `;
