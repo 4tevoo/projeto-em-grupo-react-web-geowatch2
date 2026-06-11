@@ -1,5 +1,4 @@
-import { BodyUsuarioDadosCad, BodyUsuarioDadosGame, BodyUsuarioStyle, InfoCad, 
-    UserEmail, InfosGame, Label, EmailTexto, 
+import { BodyUsuarioDadosGame, BodyUsuarioStyle, InfosGame, Label, 
     CardInfosGame, LabelInfosGame, ListHistorico, 
     ContainerLabelList, HistoricoItem, ColData, 
     ColOpcao, ColPontos, IconList, ContainerHistorico} from "./style"

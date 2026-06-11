@@ -6,10 +6,8 @@ export const HeaderUsuarioStyle = styled.div`
     url('https://media.gettyimages.com/id/1385142384/pt/vetorial/outline-gradient-world-map-outline-background.jpg?s=612x612&w=0&k=20&c=EFkbBum2tFdQD5R29Om59UdVucWAgavTkJQmS2PgU-4=');
     border-radius: 10px;
     height: auto;
-    // width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -20,13 +18,13 @@ export const HeaderUsuarioStyle = styled.div`
     
     
     @media (min-width: 768px) {
-        // width: 60%;
         min-width: 1020px;
         max-width: 1100px;
         height: 80px;
         flex-direction: row;
         padding: 20px 24px;
         margin-top: 150px;
+        justify-content: space-between;
     }
 `
 

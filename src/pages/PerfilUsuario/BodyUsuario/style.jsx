@@ -7,7 +7,7 @@ export const BodyUsuarioStyle = styled.div`
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
-    width: 90%;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     padding: 16px;
@@ -21,45 +21,6 @@ export const BodyUsuarioStyle = styled.div`
         margin-bottom: 50px;
     }
 `
-
-export const BodyUsuarioDadosCad = styled.div`
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    @media (min-width: 768px) {
-        width: 24%;
-    }
-`
-export const UserEmail = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-`
-export const InfoCad = styled.div`
-    background-color: rgba(0, 0, 0, 0.25);
-    width: 90%;
-    border-radius: 8px;
-    padding: 5px;  
-    display: flex;
-    // align-items: center;
-    // font-size: 0.9rem;
-    flex-direction: column;
-    gap: 16px;
-    color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-`
-export const EmailTexto = styled.p`
-    width: 100%;                  
-    overflow: hidden;          
-    text-overflow: ellipsis;                  
-`;
-
 
 export const BodyUsuarioDadosGame = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
@@ -159,6 +120,10 @@ export const ColData = styled.span`
 export const ColOpcao = styled.span`
     width: 50%;
     text-align: center;
+    display: none;
+    @media (min-width: 768px){
+    display: block;
+    }
 `
 
 export const ColPontos = styled.span`
