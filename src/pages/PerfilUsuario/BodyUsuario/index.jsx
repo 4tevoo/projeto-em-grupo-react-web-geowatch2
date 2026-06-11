@@ -12,6 +12,9 @@ import { LuMapPinCheck } from "react-icons/lu";
 import { FaMapPin } from "react-icons/fa";
 import { GrMap } from "react-icons/gr";
 import { usePartidas } from "../../../context/PartidasContext";
+import { FcGlobe } from "react-icons/fc";
+import ReactCountryFlag from "react-country-flag";
+import PinMap from "../../../assets/pinmap.png"
 
 
 export const BodyUsuario = () => {
@@ -62,9 +65,17 @@ export const BodyUsuario = () => {
                     {dadosPartidas.map((partida) => {
                         return(
                         <HistoricoItem key={partida.id}>
-                            <IconList><GrMap size={18} /></IconList>
+                            <IconList>
+                                <img src={PinMap}
+                                style={{ width: "28px", height: "28px", objectFit: "contain" }}/>
+                            </IconList>
                             <ColData>{formatarDataBR(partida.data)}</ColData>
-                            <ColOpcao>{partida.opcao}</ColOpcao>
+                            <ColOpcao>
+                            {partida.opcao === "" && <FcGlobe />}
+                            {partida.opcao === "BR" && <ReactCountryFlag countryCode="BR" svg /> }
+                            {partida.opcao === "JP" && <ReactCountryFlag countryCode="JP" svg />}
+                            {partida.opcao === "RU" && <ReactCountryFlag countryCode="RU" svg />}
+                            </ColOpcao>
                             <ColPontos>{partida.pontos.reduce(
                                 (acumulador, valorAtual) =>{
                                     return acumulador + valorAtual;

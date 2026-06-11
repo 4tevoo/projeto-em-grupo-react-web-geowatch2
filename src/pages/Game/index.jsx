@@ -102,6 +102,7 @@ export const GoogleMap = () => {
         }
 
         if(round == 5 && usuario != null) {
+            console.log(typeof countryCode)
             pontuacaoService.salvarPontuacao({
             idUsuario: usuario.id,
             nomeUsuario: usuario.nome,
@@ -142,7 +143,7 @@ export const GoogleMap = () => {
                 </div>
             )}
             <GoogleView
-            loading="lazy"
+            loading="eager"
             src={streetViewURL}
             onLoad={() => setIsLoading(false)}
             >

@@ -32,7 +32,7 @@ export const Perfil = () =>{
     const excluirPerfil = async () => {
 
         const confirmar = window.confirm("Tem certeza que deseja deletar a sua conta?");
-        z
+        
         if(confirmar){
             try{
                 const dados = await pontuacaoService.listarPorUsuario(usuario.id);
