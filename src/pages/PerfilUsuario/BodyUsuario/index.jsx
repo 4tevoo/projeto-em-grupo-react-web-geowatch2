@@ -11,6 +11,7 @@ import { GoTrophy } from "react-icons/go";
 import { PiTargetLight } from "react-icons/pi";
 import { LuMapPinCheck } from "react-icons/lu";
 import { FaMapPin } from "react-icons/fa";
+import { GrMap } from "react-icons/gr";
 import { usePartidas } from "../../../context/PartidasContext";
 
 
@@ -18,26 +19,18 @@ export const BodyUsuario = () => {
     const { usuario, loading } = useAuth();
     const {dadosPartidas, loadingPartidas, recorde, maiorPrecisao} = usePartidas();
 
-   
+    const formatarDataBR = (dataString) => {
+        if (!dataString) return "--/--/----";
+        const data = new Date(dataString);
+        return new Intl.DateTimeFormat('pt-BR').format(data);
+    };
+
     
     if (loading) {
         return <p>Carregando dados do jogador...</p>;
     }
     return(
     <BodyUsuarioStyle>
-        {/* <BodyUsuarioDadosCad>
-            <h2>Dados Cadastrais</h2>
-            <UserEmail> 
-                <InfoCad>
-                    <Label>Usuário</Label>
-                    {usuario.nome}
-                </InfoCad>
-                <InfoCad>
-                    <Label>Email</Label>
-                    <EmailTexto>{usuario.email}</EmailTexto>
-                </InfoCad>
-            </UserEmail>   
-        </BodyUsuarioDadosCad> */}
         <BodyUsuarioDadosGame>
             <h1>PAINEL DO JOGADOR</h1>
             <InfosGame>
@@ -68,8 +61,10 @@ export const BodyUsuario = () => {
                         <ColPontos>Pontos</ColPontos>
                     </ContainerLabelList>
                     {dadosPartidas.map((partida) => {
-                        return(<HistoricoItem key={partida.id}>
-                            <ColData>{partida.data}</ColData>
+                        return(
+                        <HistoricoItem key={partida.id}>
+                            <IconList><GrMap size={18} /></IconList>
+                            <ColData>{formatarDataBR(partida.data)}</ColData>
                             <ColOpcao>{partida.opcao}</ColOpcao>
                             <ColPontos>{partida.pontos.reduce(
                                 (acumulador, valorAtual) =>{
@@ -79,7 +74,9 @@ export const BodyUsuario = () => {
                         </HistoricoItem>
                         );
                     })}
+                    
                 </ListHistorico>
+                
             </ContainerHistorico>
         </BodyUsuarioDadosGame>
     </BodyUsuarioStyle>

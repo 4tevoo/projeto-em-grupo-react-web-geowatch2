@@ -1,8 +1,9 @@
-import { BotoesAbaContainer, ModalContainer, ModalOverlay, BotaoAba, FormDados, InputDados, BotaoSalvar, AbaAvatar } from "./style";
+import { BotoesAbaContainer, ModalContainer, ModalOverlay, BotaoAba, FormDados, InputDados, BotaoSalvar, AbaAvatar, BotaoFechar } from "./style";
 import { userService } from "../../../services/usuariosService";
 import { useAuth } from "../../../context/AuthContext";
 import { useState } from "react";
 import { AvatarList } from "./AvatarList";
+import { IoCloseOutline } from "react-icons/io5";
 
 export const ModalUpdate = ({abreModal, fechaModal}) =>{
     const {usuario, login} = useAuth();
@@ -39,6 +40,7 @@ export const ModalUpdate = ({abreModal, fechaModal}) =>{
     return(
         <ModalOverlay onClick={fechaModal}>
             <ModalContainer onClick={(e) => e.stopPropagation()}>
+                <BotaoFechar onClick={fechaModal}><IoCloseOutline  size={30}/></BotaoFechar>
                 <BotoesAbaContainer>
                     <BotaoAba
                     $ativo={aba === 'conta'}

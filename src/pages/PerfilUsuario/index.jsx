@@ -6,6 +6,7 @@ import { useAuth } from "../../context/AuthContext"
 import { ModalUpdate } from "./ModalUpdate"
 import { useState } from "react"
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { pontuacaoService } from "../../services/pontuacaoService"
 
 export const Perfil = () =>{
 
@@ -15,15 +16,22 @@ export const Perfil = () =>{
     const abrirModal = () => setAbreModal(true);
     const fecharModal = () => setAbreModal(false);
 
-    const excluirPerfil = () => {
+    const excluirPerfil = async () => {
         const confirmar = window.confirm("Tem certeza que deseja deletar a sua conta?");
-
+        
         if(confirmar){
-            userService.deletar(usuario.id);
-            alert("Conta excluída com sucesso.");
-            logout();
+            try{
+                const dados = await pontuacaoService.listarPorUsuario(usuario.id);
+                const partidas = dados.data;
+                partidas.map(p => pontuacaoService.deletar(p.id))
+                userService.deletar(usuario.id);
+                alert("Conta excluída com sucesso.");
+                logout();
+            }catch(erro){
+            alert("Erro ao excluir a conta!")
+            }
         }
-    }
+    };
 
     return(
         usuario ?
