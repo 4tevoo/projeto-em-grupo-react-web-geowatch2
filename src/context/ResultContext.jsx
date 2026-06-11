@@ -33,7 +33,7 @@ export const ResultProvider = ({ children }) => {
   }, [countryCode]); 
   
   return (
-    <ResultContext.Provider value={{ gameData, setGameData, posicoesValidas, setCountryCode, usados, setUsados }}>
+    <ResultContext.Provider value={{ gameData, setGameData, posicoesValidas, setCountryCode, countryCode, usados, setUsados }}>
       {children}
     </ResultContext.Provider>
   );
