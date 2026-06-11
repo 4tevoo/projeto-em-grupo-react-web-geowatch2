@@ -108,7 +108,7 @@ export const GoogleMap = () => {
             pontos: [...gameData.scores, score],
             paises: [...gameData.countries, randomSeed.country],
             distancias: [...gameData.distances, truncateToDecimals(getDistance(location, position), 2)],
-            data: Date.now(),
+            data: new Date().toISOString(),
             opcao: countryCode
             })
         }

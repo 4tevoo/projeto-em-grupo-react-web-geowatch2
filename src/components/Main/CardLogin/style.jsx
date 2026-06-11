@@ -13,9 +13,17 @@ export const CardWrapper = styled.div`
     gap: 0.8rem;
     z-index: 100;
 
-    @media (max-width: 1300px) {
-        display: none;
-    }
+    @media (min-width: 768px) {
+        display: flex;
+        background-color: ${colors.black};
+        align-self: center;
+        margin-left: auto;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 300px;
+        flex-direction: column;
+        gap: 0.8rem;
+        z-index:
 `;
 
 export const CardTitulo = styled.h3`
