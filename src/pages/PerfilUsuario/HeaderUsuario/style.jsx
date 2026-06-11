@@ -15,16 +15,16 @@ export const HeaderUsuarioStyle = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #FFFFFF;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    margin-top: 70px;
+    margin-top: 600px;
     gap: 20px;
     
     
     @media (min-width: 768px) {
-        width: 60%; /* Desktop: Volta para o tamanho original */
+        width: 60%;
         height: 80px;
-        flex-direction: row; /* Lado a lado no computador */
+        flex-direction: row;
         padding: 20px 24px;
-        margin-top: 0;
+        margin-top: 250px;
     }
 `
 export const InfosHeader = styled.div`
@@ -51,5 +51,15 @@ export const ButtonsHeader = styled.div`
     @media (min-width: 768px) {
         padding-right: 16px;
         gap: 12px;
+    }
+`
+
+export const ContainerElo = styled.div`
+    display: flex;
+    justify-content: center;
+    img{
+        width: 80px;
+        height: 90px;
+        self-align: center;
     }
 `

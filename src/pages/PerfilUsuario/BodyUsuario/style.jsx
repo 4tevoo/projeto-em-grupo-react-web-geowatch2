@@ -17,6 +17,7 @@ export const BodyUsuarioStyle = styled.div`
         width: 60%; 
         flex-direction: row; 
         padding: 24px;
+        margin-bottom: 50px;
     }
 `
 
@@ -31,7 +32,7 @@ export const BodyUsuarioDadosCad = styled.div`
     gap: 30px;
 
     @media (min-width: 768px) {
-        width: 30%;
+        width: 24%;
     }
 `
 export const UserEmail = styled.div`
@@ -45,25 +46,35 @@ export const InfoCad = styled.div`
     border-radius: 8px;
     padding: 5px;  
     display: flex;
+    // align-items: center;
+    // font-size: 0.9rem;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
     color: #FFFFFF;
     border: 1px solid rgba(255, 255, 255, 0.05);
 `
+export const EmailTexto = styled.p`
+    width: 100%;                  
+    overflow: hidden;          
+    text-overflow: ellipsis;                  
+`;
+
+
 export const BodyUsuarioDadosGame = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 10px;
+    padding: 30px;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 30px;
 
-    @media (min-width: 768px) {
-        width: 70%; 
-    }
+
+    // @media (min-width: 768px) {
+    //     width: 100%; 
+    // }
 
 `
 export const Label = styled.span`
@@ -77,10 +88,104 @@ export const Label = styled.span`
 export const InfosGame = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 92%;
+    gap: 20px;
+    // width: 92%;
 
     @media (min-width: 768px) {
         flex-direction: row;
     }
+`
+
+export const CardInfosGame = styled.div`
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    width: 90%;
+    border-radius: 8px;
+    padding: 5px;  
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #FFFFFF;
+    border: 2px solid rgba(140, 0, 255, 0.2);
+`
+export const LabelInfosGame = styled.div`
+    font-size: 0.88rem;
+    font-weight: bold;
+`
+
+export const ListHistorico = styled.ul`
+    // background-color: purple;
+    list-style: none;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+     &::-webkit-scrollbar {
+        width: 6px;           
+    }
+
+    &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02); 
+    border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15); 
+    border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35); 
+    }
+`
+
+export const ContainerLabelList = styled.div`
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    // width: 100%;
+`
+export const ColData = styled.span`
+    width: 25%;
+    text-align: center;
+`
+
+export const ColOpcao = styled.span`
+    width: 50%;
+    text-align: center;
+`
+
+export const ColPontos = styled.span`
+    width: 25%;
+    text-align: center;
+`
+
+export const IconList = styled.div`
+    position: absolute;
+    left: 1.5%;
+`
+
+export const HistoricoItem = styled.li`
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &:hover{
+        background-color: rgba(10, 10, 10, 0.2);
+    }
+`
+
+export const ContainerHistorico = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 `

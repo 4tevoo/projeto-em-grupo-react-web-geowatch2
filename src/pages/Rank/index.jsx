@@ -166,14 +166,18 @@ export default function RankingPage() {
               <TableHeader>
                 <ThCell>#</ThCell>
                 <ThCell>Jogador</ThCell>
-                <ThCell>Pontos</ThCell>
-                <ThCell>Recorde</ThCell>
+                <ThCell className={sortBy === 'recorde' ? 'hide-mobile' : ''}>
+                  Pontos
+                </ThCell>
+                <ThCell className={`hide-mobile ${sortBy === 'recorde' ? 'show-mobile' : ''}`}>
+                  Recorde
+                </ThCell>
               </TableHeader>
 
               {players.map((p, idx) => {
-                const pontosRank = getColorRank(p.id, 'pontos');
+                const pontosRank  = getColorRank(p.id, 'pontos');
                 const recordeRank = getColorRank(p.id, 'recorde');
-                
+
                 return (
                   <Row key={p.id} $delay={0.03 * idx}>
                     <RankCell>
@@ -191,11 +195,17 @@ export default function RankingPage() {
                       <PlayerName>{p.userName}</PlayerName>
                     </PlayerInfo>
 
-                    <StatCell $rank={pontosRank}>
+                    <StatCell
+                      $rank={pontosRank}
+                      className={sortBy === 'recorde' ? 'hide-mobile' : ''}
+                    >
                       {(p.pontos ?? 0).toLocaleString('pt-BR')}
                     </StatCell>
 
-                    <StatCell className="hide-mobile" $rank={recordeRank}>
+                    <StatCell
+                      $rank={recordeRank}
+                      className={`hide-mobile ${sortBy === 'recorde' ? 'show-mobile' : ''}`}
+                    >
                       {p.recorde ?? '—'}
                     </StatCell>
                   </Row>
