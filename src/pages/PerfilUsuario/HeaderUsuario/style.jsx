@@ -71,7 +71,7 @@ export const ContainerElo = styled.div`
     display: flex;
     justify-content: center;
     img{
-        width: 80px;
+        width: 70px;
         height: 90px;
         self-align: center;
     }
