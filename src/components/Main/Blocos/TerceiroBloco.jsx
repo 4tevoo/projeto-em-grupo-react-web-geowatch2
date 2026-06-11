@@ -16,7 +16,7 @@ export default function TerceiroBloco() {
 
     return (
         <Bloco $bg={colors.blue} $img={Russia}>
-            <div>
+            <div style={{ width: '100%' }}>
                 <BlocoTitulo>
                     PREPARADO PARA UM DESAFIO?
                 </BlocoTitulo>
