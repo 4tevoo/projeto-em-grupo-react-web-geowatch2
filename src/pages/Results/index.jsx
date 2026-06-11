@@ -25,7 +25,6 @@ export const Results = () => {
                         'Authorization': `Bearer ${import.meta.env.VITE_REST_COUNTRIES_KEY}`
                     }
                 })
-                console.log(response.data.data.objects[0])
                 setCountryData(response.data.data.objects[0])
             } catch (error) {
                 console.log(error.message)
