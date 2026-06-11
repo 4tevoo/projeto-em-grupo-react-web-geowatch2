@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/api-countries/:match*",
+      "destination": "https://restcountries.com/v3.1/:match*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
