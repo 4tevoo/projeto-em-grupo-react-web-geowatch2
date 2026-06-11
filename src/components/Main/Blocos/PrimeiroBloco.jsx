@@ -19,6 +19,7 @@ export default function PrimeiroBloco() {
                     Explore o mundo!
                 </TituloUm>
                 <BlocoTexto>
+                    Dispute o pódio jogando todas as 5 rodadas e entre para a história!
                     Seja jogado em qualquer lugar, das praias do Rio à Floresta Amazônica. 
                     Descubra onde você está... Junte-se a milhões de jogadores hoje!
                 </BlocoTexto>

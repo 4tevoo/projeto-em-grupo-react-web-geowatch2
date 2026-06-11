@@ -827,5 +827,83 @@ export const locais =
     "country": "IT",
     "latitude": 41.8900709,
     "longitude": 12.4927699
+  },
+  {
+    "id": 139,
+    "country": "BR",
+    "latitude": -3.0455926,
+    "longitude": -60.015825
+  },
+  {
+    "id": 140,
+    "country": "BR",
+    "latitude": 2.7990986,
+    "longitude": -60.6792821
+  },
+  {
+    "id": 141,
+    "country": "BR",
+    "latitude": -1.2645385,
+    "longitude": -60.4064449
+  },
+  {
+    "id": 142,
+    "country": "BR",
+    "latitude": 2.8196525,
+    "longitude": -60.6762072
+  },
+  {
+    "id": 143,
+    "country": "BR",
+    "latitude": -7.7385584,
+    "longitude": -72.6533685
+  },
+  {
+    "id": 144,
+    "country": "BR",
+    "latitude": -32.0305102,
+    "longitude": -52.088405
+  },
+  {
+    "id": 145,
+    "country": "UY",
+    "latitude": -34.6946574,
+    "longitude": -56.2187556
+  },
+  {
+    "id": 146,
+    "country": "PY",
+    "latitude": -22.9661618,
+    "longitude": -56.543177
+  },
+  {
+    "id": 147,
+    "country": "BR",
+    "latitude": -15.632062,
+    "longitude": -56.0140055
+  },
+  {
+    "id": 148,
+    "country": "BR",
+    "latitude": -11.1253908,
+    "longitude": -62.3689066
+  },
+  {
+    "id": 149,
+    "country": "CL",
+    "latitude": -45.5848914,
+    "longitude": -72.0749951
+  },
+  {
+    "id": 150,
+    "country": "KG",
+    "latitude": 41.3348149,
+    "longitude": 72.9308233
+  },
+  {
+    "id": 151,
+    "country": "VN",
+    "latitude": 21.0211443,
+    "longitude": 105.8579775
   }
 ]
