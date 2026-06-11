@@ -6,7 +6,9 @@ import { useAuth } from "../../context/AuthContext"
 import { ModalUpdate } from "./ModalUpdate"
 import { useState } from "react"
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { pontuacaoService } from "../../services/pontuacaoService"
+import { pontuacaoService } from "../../services/pontuacaoService";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import DataSecurity from "../../assets/dataSecurity.json";
 
 export const Perfil = () =>{
 
@@ -41,7 +43,9 @@ export const Perfil = () =>{
             <ModalUpdate abreModal={abreModal} fechaModal={fecharModal}/>
         </ContainerPerfil>) : 
         (<ContainerPerfil>
-            <div>Você precisa estar logado para acessar essa página
+            <div style={{color: "white"}}>
+                <DotLottieReact data={DataSecurity} loop autoplay/>       
+                Você precisa estar logado para acessar essa página
             </div>
         </ContainerPerfil>)
     )
