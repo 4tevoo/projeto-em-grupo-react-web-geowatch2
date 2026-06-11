@@ -20,7 +20,7 @@ export const Results = () => {
 
         const countriesAPI = async () => {
             try {
-                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${gameData.countries[gameData.round - 1]}`)
+                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${gameData.countries[gameData.round - 1]}/`)
                 setCountryData(response.data[0])
             } catch (error) {
                 console.log(error.message)
